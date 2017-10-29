@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Tale of Two Boyfriends</title>
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<link rel="stylesheet" href="./style/jquery.range.css">
+	<link rel="stylesheet" href="./style/selectize.default.css">
+	<script src="./script/jquery.js"></script>
+</head>
+<body>
+	<header></header>
+	<div>
+		<!--Step 1 Design character-->
+		<div id="design_character">
+			<div id="design_BOG">
+				<h2>BOG</h2>
+				<h3>Boyfriend of Obligation</h3>
+				<div class="design_character_input">
+					<div class="design_block">
+						<h4>Moral Quality:</h4>
+						<div class="slider">
+							<span class="slider_text_left">Negative</span>
+							<span class="slider_text_right">Positive</span>
+							<div class="slider_body">
+								<input type="hidden" id="slider_moral_BOG" value="0" />
+							</div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Handsomeness:</h4>
+						<div class="slider">
+							<span class="slider_text_left">Not Handsome</span>
+							<span class="slider_text_right">Handsome</span>
+							<div class="slider_body">
+								<input type="hidden" id="slider_handsome_BOG" value="0" />
+							</div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Skin Color:</h4>
+						<div class="color_palette">
+							<div id="white_BOG" class="color"></div>
+							<div id="yellow_BOG" class="color"></div>
+							<div id="black_BOG" class="color"></div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Status/Occupation:</h4>
+						<div class="status_input">
+							<select id="status_BOG" placeholder="Click to select">
+								<option value="Click to select"></option>
+								<option value="teacher">Primary School Teacher</option>
+								<option value="waiter">Waiter</option>
+								<option value="scientist">Scientist</option>
+								<option value="worker">Worker</option>
+							</select>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Personality:</h4>
+						<p id="p">test:positive</p>
+						<p id="n">test:negative</p>
+					</div>
+				</div>	
+			</div>
+			<div id="design_BOD">
+				<h2>BOD</h2>
+				<h3>Boyfriend of Desire</h3>
+				<div class="design_character_input">
+					<div class="design_block">
+						<h4>Moral Quality:</h4>
+						<div class="slider">
+							<span class="slider_text_left">Negative</span>
+							<span class="slider_text_right">Positive</span>
+							<div class="slider_body">
+								<input type="hidden" id="slider_moral_BOD" value="0" />
+							</div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Handsomeness:</h4>
+						<div class="slider">
+							<span class="slider_text_left">Not Handsome</span>
+							<span class="slider_text_right">Handsome</span>
+							<div class="slider_body">
+								<input type="hidden" id="slider_handsome_BOD" value="0" />
+							</div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Skin Color:</h4>
+						<div class="color_palette">
+							<div id="white_BOD" class="color"></div>
+							<div id="yellow_BOD" class="color"></div>
+							<div id="black_BOD" class="color"></div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Status/Occupation:</h4>
+						<div class="status_input">
+							<select id="status_BOD" placeholder="Click to select">
+								<option value="Click to select"></option>
+								<option value="teacher">Actor</option>
+								<option value="waiter">Fitness Instructor</option>
+								<option value="scientist">Musician</option>
+								<option value="worker">CEO</option>
+								<option value="worker">Designer</option>
+							</select>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Personality:</h4>
+					</div>
+				</div>	
+			</div>
+			<div id="step1" class="step">
+				<h1>Step One. Character Design</h1>
+				<p>Please use the above options to design two main characters. Character images and story cards will be generated based on your selection. Click Generate Character button when you finish.</p>
+				<button>Generate Character</button>
+			</div>
+		</div>
+		<div id="generate_character">
+		
+		</div>
+	</div>
+	<script src="./script/jquery.range.js"></script>
+	<script src="./script/selectize.min.js"></script>
+	<script type="text/javascript" src="./script/main.js"></script>
+</body>
+</html>
