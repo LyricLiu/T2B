@@ -11,6 +11,14 @@
 <body>
 	<header></header>
 	<div>
+		<!--Front page-->
+		<div id="homepage">
+			<img id="title_image" src="./img/title.png">
+			<h2>Tale of Two Boyfriends</h2>
+			<p>This website provides a story pattern to help you create interactive narrative with dramatically meaningful varations for the interactor to explore.The story pattern is based on Janet H. Murray's W2P pattern which privileges the female position by evaluating the male figures as potential choices and divides male characters into Boyfriends of ObliGation (BOGs) and Boyfriends of Desire (BODs). On this website, you will be guilded to define two male characters as BOG and BOD. After that, character figures and possible plot cards will be generated to help you design your storyworld.</p>
+			<a href="">Read Janet H. Murray's article “A Tale of Two Boyfriends”</a>
+			<button id="create_story">Create a T2B story</button>
+		</div>
 		<!--Step 1 Design character-->
 		<div id="design_character">
 			<div id="design_BOG">
@@ -51,9 +59,16 @@
 							<select id="status_BOG" placeholder="Click to select">
 								<option value="Click to select"></option>
 								<option value="teacher">Primary School Teacher</option>
-								<option value="waiter">Waiter</option>
-								<option value="scientist">Scientist</option>
-								<option value="worker">Worker</option>
+								<option value="waiter">Restaurant Waiter</option>
+								<option value="owner">Shop Owner</option>
+								<option value="clerk">Office clerk</option>
+								<option value="sale">Retail salesperson</option>
+								<option value="developer">Software developer</option>
+								<option value="manager">Financial manager</option>
+								<option value="coach">Coach</option>
+								<option value="unemployed">Unemployed</option>
+								<option value="politician">Politician</option>
+								<option value="gangster">Gangster</option>
 							</select>
 						</div>
 					</div>
@@ -101,11 +116,19 @@
 						<div class="status_input">
 							<select id="status_BOD" placeholder="Click to select">
 								<option value="Click to select"></option>
-								<option value="teacher">Actor</option>
-								<option value="waiter">Fitness Instructor</option>
-								<option value="scientist">Musician</option>
-								<option value="worker">CEO</option>
-								<option value="worker">Designer</option>
+								<option value="actor">Actor</option> 
+								<option value="rock">Rock Star</option>
+								<option value="fitness">Fitness Instructor</option>
+								<option value="athlete">Athlete</option>
+								<option value="superman">Superman</option>
+								<option value="ceo">CEO</option>
+								<option value="artist">Artist</option>
+								<option value="politician">Politician</option>
+								<option value="entrepreneur">Entrepreneur</option>
+								<option value="billionaire">Billionaire</option>
+								<option value="free">Freelancer</option>
+								<option value="clerk">Office Clerk</option>
+
 							</select>
 						</div>
 					</div>
@@ -117,11 +140,19 @@
 			<div id="step1" class="step">
 				<h1>Step One. Character Design</h1>
 				<p>Please use the above options to design two main characters. Character images and story cards will be generated based on your selection. Click Generate Character button when you finish.</p>
-				<button>Generate Character</button>
+				<button id="generate_character_button">Generate Character</button>
 			</div>
 		</div>
 		<div id="generate_character">
-		
+			<div id="generate_BOG">
+				<h2>BOG</h2>
+			</div>
+			<div id="generate_BOD">
+				<h2>BOD</h2>
+			</div>
+			<div id="step2" class="step">
+				
+			</div>
 		</div>
 	</div>
 	<script src="./script/jquery.range.js"></script>
