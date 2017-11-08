@@ -93,6 +93,12 @@
         $('#design_character').show();
     });
 
+    $('#generate_character_button').click(function(){
+        $('#design_character').hide();
+        $('#generate_character').show();
+    });
+
+
     //select skin
      $('#white_BOG').click(function(){
         $('#white_BOG').css('border-bottom','2px solid #d74276');
@@ -104,14 +110,14 @@
         $('#yellow_BOG').css('border-bottom','2px solid #d74276');
         $('#white_BOG').css('border-bottom','');
         $('#black_BOG').css('border-bottom','');
-        var skin_BOG = 1;
+        skin_BOG = 1;
      })
 
      $('#black_BOG').click(function(){
         $('#black_BOG').css('border-bottom','2px solid #d74276');
         $('#white_BOG').css('border-bottom','');
         $('#yellow_BOG').css('border-bottom','');
-        var skin_BOG = 2;
+        skin_BOG = 2;
      })
 
      $('#white_BOD').click(function(){
@@ -124,14 +130,14 @@
         $('#yellow_BOD').css('border-bottom','2px solid #d74276');
         $('#white_BOD').css('border-bottom','');
         $('#black_BOD').css('border-bottom','');
-        var skin_BOD = 1;
+        skin_BOD = 1;
      })
 
      $('#black_BOD').click(function(){
         $('#black_BOD').css('border-bottom','2px solid #d74276');
         $('#white_BOD').css('border-bottom','');
         $('#yellow_BOD').css('border-bottom','');
-        var skin_BOD = 2;
+        skin_BOD = 2;
      })
 
 
@@ -170,12 +176,92 @@
             cloth_BOD = 0;
         }
 
-        if($('#slider_handsome_BOG').attr('value')<0){
+        if($('#slider_handsome_BOG').attr('value')<0 || $('#slider_handsome_BOG').attr('value')==0){
             hair_BOG = 1;
         }
 
         if($('#slider_handsome_BOD').attr('value')<0){
             hair_BOD = 1;
+        }
+
+        //display & hide generated character image
+
+        if(hair_BOG == 1){
+            $('.BOG-hair1').show();
+            $('.BOG-hair0').hide();
+        }else{
+            $('.BOG-hair1').hide();
+            $('.BOG-hair0').show();
+        }
+
+        if(hair_BOD == 1){
+            $('.BOD-hair1').show();
+            $('.BOD-hair0').hide();
+        }else{
+            $('.BOD-hair1').hide();
+            $('.BOD-hair0').show();
+        }
+
+        if(cloth_BOG == 0){
+            $('.BOG-cloth0').show();
+        }else if(cloth_BOG == 1){
+            $('.BOG-cloth1').show();
+        }else if(cloth_BOG == 2){
+            $('.BOG-cloth2').show();
+        }else if(cloth_BOG == 3){
+            $('.BOG-cloth3').show();
+        }else if(cloth_BOG == 4){
+            $('.BOG-cloth4').show();
+        }else if(cloth_BOG == 5){
+            $('.BOG-cloth5').show();
+        }else if(cloth_BOG == 6){
+            if(skin_BOG == 0){
+                $('.BOG-cloth6-0').show();
+            }else if(skin_BOG == 1){
+                $('.BOG-cloth6-1').show();
+            }else{
+                $('.BOG-cloth6-2').show();
+            }
+        }
+
+        if(cloth_BOD == 0){
+            $('.BOD-cloth0').show();
+        }else if(cloth_BOD == 1){
+            $('.BOD-cloth1').show();
+        }else if(cloth_BOD == 2){
+            $('.BOD-cloth2').show();
+        }else if(cloth_BOD == 3){
+            $('.BOD-cloth3').show();
+        }else if(cloth_BOD == 4){
+            $('.BOD-cloth4').show();
+        }else if(cloth_BOD == 5){
+            $('.BOD-cloth5').show();
+        }else if(cloth_BOD == 6){
+            if(skin_BOD == 0){
+                $('.BOD-cloth6-0').show();
+            }else if(skin_BOD == 1){
+                $('.BOD-cloth6-1').show();
+            }else{
+                $('.BOD-cloth6-2').show();
+            }
+        }else if(cloth_BOD == 7){
+            $('.BOD-cloth7').show();
+        }
+
+        if(skin_BOG == 0){
+            $('.BOG-skin0').show();
+        }else if(skin_BOG ==1){
+            $('.BOG-skin1').show();
+        }else{
+            $('.BOG-skin2').show();
+        }
+
+        if(skin_BOD == 0){
+            $('.BOD-skin0').show();
+        }else if(skin_BOD ==1){
+            $('.BOD-skin1').show();
+        }else{
+            $('.BOD-skin2').show();
         }
 
     })

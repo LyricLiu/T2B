@@ -124,9 +124,26 @@ button{
 	display:none;
 }
 
-#homepage{
+#generate_character{
 	display:none;
 }
+
+.BOG-skin0, .BOG-skin1, .BOG-skin2,
+.BOG-cloth0, .BOG-cloth1, .BOG-cloth2, .BOG-cloth3, .BOG-cloth4, .BOG-cloth5,
+.BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2,
+.BOG-hair0, .BOG-hair1,
+.BOG-skin0, .BOG-skin1, .BOG-skin2{
+	display: none;
+}
+
+.BOD-skin0, .BOD-skin1, .BOD-skin2,
+.BOD-cloth0, .BOD-cloth1, .BOD-cloth2, .BOD-cloth3, .BOD-cloth4, .BOD-cloth5,
+.BOD-cloth6-0, .BOD-cloth6-1, .BOD-cloth6-2, .BOD-cloth7,
+.BOD-hair0, .BOD-hair1,
+.BOD-skin0, .BOD-skin1, .BOD-skin2{
+	display: none;
+}
+
 
 /*position content in the middle of screen*/
 .frame{
@@ -343,23 +360,158 @@ button{
 
 #generate_BOG{
 	position: absolute;
-	width:30%;
-	height:100%;
-	background-color: #fff;
-	left:15%;
+	width:400px;
+	height:calc(100% - 60px);
+	background: url("../img/BOG_bg.png") no-repeat center center;
+	left:14%;
 }
 
 #generate_BOD{
 	position: absolute;
-	width:30%;
-	height:100%;
-	background-color: #fff;
-	right:15%;
+	width:400px;
+	height:calc(100% - 60px);
+	background: url("../img/BOD_bg.png") no-repeat center center;
+	right:14%;
 }
 
 #generate_character h2{
 	text-align: center;
 }
+
+#generate_BOG_img{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:calc(50% - 230px);
+	overflow: hidden;
+}
+
+#generate_BOG_img div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#generate_BOD_img{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:calc(50% - 230px);
+	overflow: hidden;
+}
+
+#generate_BOD_img div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#BOG_hair1{
+	background-image: url("../img/character/BOG_hair1.png");
+}
+
+#BOG_hair2{
+	background-image: url("../img/character/BOG_hair2.png");
+}
+
+#BOD_hair1{
+	background-image: url("../img/character/BOD_hair1.png");
+}
+
+#BOD_hair2{
+	background-image: url("../img/character/BOD_hair2.png");
+}
+
+#hand1{
+	background-image: url("../img/character/hand1.png");
+}
+
+#hand2{
+	background-image: url("../img/character/hand2.png");
+}
+
+#hand3{
+	background-image: url("../img/character/hand3.png");
+}
+
+#cloth0{
+	background-image: url("../img/character/cloth0.png");
+}
+
+#cloth1{
+	background-image: url("../img/character/cloth1.png");
+}
+
+#cloth2{
+	background-image: url("../img/character/cloth2.png");
+}
+
+#cloth3{
+	background-image: url("../img/character/cloth3.png");
+}
+
+#cloth4_1{
+	background-image: url("../img/character/cloth4_1.png");
+}
+
+#cloth4{
+	background-image: url("../img/character/cloth4.png");
+}
+
+#cloth5_1{
+	background-image: url("../img/character/cloth5_1.png");
+}
+
+#cloth5{
+	background-image: url("../img/character/cloth5.png");
+}
+
+#cloth6_1{
+	background-image: url("../img/character/cloth6_1.png");
+}
+
+#cloth6_2{
+	background-image: url("../img/character/cloth6_2.png");
+}
+
+#cloth6_3{
+	background-image: url("../img/character/cloth6_3.png");
+}
+
+#cloth7{
+	background-image: url("../img/character/cloth7.png");
+}
+
+#BOG_skin1{
+	background-image: url("../img/character/BOG_skin1.png");
+}
+
+#BOG_skin2{
+	background-image: url("../img/character/BOG_skin2.png");
+}
+
+#BOG_skin3{
+	background-image: url("../img/character/BOG_skin3.png");
+}
+
+#BOD_skin1{
+	background-image: url("../img/character/BOD_skin1.png");
+}
+
+#BOD_skin2{
+	background-image: url("../img/character/BOD_skin2.png");
+}
+
+#BOD_skin3{
+	background-image: url("../img/character/BOD_skin3.png");
+}
+
+
+
+
+
 
 
 
