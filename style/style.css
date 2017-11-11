@@ -70,6 +70,11 @@ button{
 
 }
 
+/* test test test test 
+#homepage{
+	display: none;
+}
+*/
 
 /*step footer style*/
 
@@ -91,12 +96,14 @@ button{
 }
 
 .step p{
+	position: relative;
 	font-family: Lato, sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 1em;
     color:#fbeff0;
     margin-left: 40px;
+    width:75%;
 }
 
 .step button{
@@ -125,6 +132,10 @@ button{
 }
 
 #generate_character{
+	display:none;
+}
+
+#design_personality{
 	display:none;
 }
 
@@ -218,14 +229,14 @@ button{
 	top:6.5%;
 }
 
-#design_BOG{
+.design_BOG{
 	position: absolute;
 	left:0;
 	width:50%;
 	height:100%;
 }
 
-#design_BOD{
+.design_BOD{
 	position: absolute;
 	width:50%;
 	right:0;
@@ -251,7 +262,7 @@ button{
 
 .design_block{
 	position: relative;
-	height:80px;
+	height:90px;
 }
 
 .slider{
@@ -346,13 +357,6 @@ button{
 	display: none;
 }
 
-
-
-#step1 p{
-	position: relative;
-	width:70%;
-
-}
 
 /* Generate_character */
 #generate_character{
@@ -510,6 +514,67 @@ button{
 
 #BOD_skin3{
 	background-image: url("../img/character/BOD_skin3.png");
+}
+
+/* design _ personality */
+
+#design_personality h2{
+	text-align: center;
+	position: relative;
+	top:3%;
+}
+
+
+#positive_BOG,
+#negative_BOD,
+#positive_BOD,
+#negative_BOG{
+	display: none;
+}
+
+
+.design_BOG td{
+	border: 2px solid #fbeff0;
+}
+
+.design_BOD td{
+	border: 2px solid #fff;
+}
+
+table {
+	top:3%;
+	width:84%;
+	position: relative;
+	left:8%;
+	text-align: left;
+	font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 1em;
+    border-spacing: 5px;
+}
+
+td {
+	width:20%;
+	padding:8px 0 8px 0;
+	border-radius: 25px;
+	text-align: center;
+}
+
+td:hover {
+	border: 2px solid #d74276;
+	cursor:pointer;
+}
+
+th {
+	padding:30px 0 10px 15px;
+	color:#20304c;
+}
+
+#note_text{
+	font-size: 0.8em;
+	margin-top: 8px;
+	color:#e29fba;
 }
 
 

@@ -98,6 +98,23 @@
         $('#generate_character').show();
     });
 
+    $('#confirm_character_button').click(function(){
+        $('#generate_character').hide();
+        $('#design_personality').show();
+
+        if($('#slider_moral_BOG').attr('value')<0 || $('#slider_moral_BOG').attr('value')==0){
+            $('#negative_BOG').show();
+        }else{
+            $('#positive_BOG').show();
+        }
+
+        if($('#slider_moral_BOD').attr('value')<0){
+            $('#negative_BOD').show();
+        }else{
+            $('#positive_BOD').show();
+        }
+    });
+
 
     //select skin
      $('#white_BOG').click(function(){
@@ -266,7 +283,48 @@
 
     })
 
+    //table click
+    $('td').click(function(){
+        $(this).css('border','2px solid #d74276');
+    })
 
+    $('.show_violence').click(function(){
+        $('.threat').show();
+        $('.fear').show();
+        $('.revenge').show();
+        $('.violence').show();
+        $('.battle').show();
+    })
+
+    $('.hide_violence').click(function(){
+        $('.threat').hide();
+        $('.fear').hide();
+        $('.battle').hide();
+    })
+
+    $('.show_suspicion').click(function(){
+        $('.suspicion').show();
+    })
+
+    $('.show_fear_poverty').click(function(){
+        $('.fear-poverty').show();
+    })
+
+    $('.show_seduction').click(function(){
+        $('.seduction').show();
+    })
+
+    $('.show_temptation').click(function(){
+        $('.temptation').show();
+    })
+
+    $('.show_temptation_wealth').click(function(){
+        $('.temptation_wealth').show();
+    })
+
+    $('.show_rescue').click(function(){
+        $('.temptation_rescue').show();
+    })
 
 
 

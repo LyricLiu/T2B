@@ -21,7 +21,7 @@
 		</div>
 		<!--Step 1 Design character-->
 		<div id="design_character">
-			<div id="design_BOG">
+			<div class="design_BOG">
 				<h2>BOG</h2>
 				<h3>Boyfriend of Obligation</h3>
 				<div class="design_character_input">
@@ -74,7 +74,7 @@
 					</div>
 				</div>	
 			</div>
-			<div id="design_BOD">
+			<div class="design_BOD">
 				<h2>BOD</h2>
 				<h3>Boyfriend of Desire</h3>
 				<div class="design_character_input">
@@ -131,7 +131,7 @@
 			</div>
 			<div id="step1" class="step">
 				<h1>Step One. Character Design</h1>
-				<p>Please use the above options to design two main characters. Character images and story cards will be generated based on your selection. Click Generate Character button when you finish.</p>
+				<p>Use the above options to design two main characters. Character appearance will be generated based on your selection. Click Generate Character button after you finish.</p>
 				<button id="generate_character_button">Generate Character</button>
 			</div>
 		</div>
@@ -182,9 +182,195 @@
 				</div>
 			</div>
 			<div id="step2" class="step">
-				
+				<h1>Step Two. Confirm Your Character</h1>
+				<p>Congratulations! You have successfully designed the appearance of your characters. Now it's time to add some attributes and personalities to your character. Click Set Attributes button to continue.</p>
+				<button id="confirm_character_button">Set Attributes</button>
 			</div>
 		</div>
+		<div id="design_personality">
+			<div class="design_BOG">
+				<h2>BOG</h2>
+				<table id="negative_BOG">
+					<tr>
+						<th>Authority:</th>
+					</tr>
+					<tr>
+						<td class="show_violence">Manipulative</td>
+						<td>Rule-based</td>
+						<td class="hide_violence">Conformist</td>
+						<td class="show_violence">Dictatorial</td>
+						<td class="show_violence">Menacing</td>
+					</tr>
+					<tr>
+						<th>Potency:</th>
+					</tr>
+					<tr>
+						<td class="show_fear_poverty">Impotent</td>
+						<td class="hide_violence">Withholding</td>
+						<td class="show_violence">Controlling</td>
+						<td class="show_violence">Despotic</td>
+						<td class="show_violence">Violating</td>
+					</tr>
+					<tr>
+						<th colspan="2">Patriarchal Privilege:</th>
+					</tr>
+					<tr>
+						<td class="show_violence">Exploitative</td>
+						<td>Snobbish</td>
+						<td class="show_suspicion">Unfaithful</td>
+						<td class="show_violence">Abusive</td>
+						<td class="show_violence">Tyrannical</td>
+					</tr>
+					<tr>
+						<th>Attachment:</th>
+					</tr>
+					<tr>
+						<td>Cloying</td>
+						<td>Cool</td>
+						<td>Objectifying</td>
+						<td>Jealous</td>
+						<td class="show_violence">Sadistic</td>
+					</tr>
+				</table>
+				<table id="positive_BOG">
+					<tr>
+						<th>Authority:</th>
+					</tr>
+					<tr>
+						<td>Communitarian</td>
+						<td>Rational</td>
+						<td>Legal</td>
+						<td>Physical</td>
+						<td>Financial</td>
+					</tr>
+					<tr>
+						<th>Potency in:</th>
+					</tr>
+					<tr>
+						<td>Sexuality</td>
+						<td>Knowledge</td>
+						<td>Legal System</td>
+						<td>Fighting</td>
+						<td>Wealth</td>
+					</tr>
+					<tr>
+						<th>Patriarchal:</th>
+					</tr>
+					<tr>
+						<td>Pacifist</td>
+						<td>Antiegalitarian</td>
+						<td>Punishment</td>
+						<td>Macho Gallantry</td>
+						<td>Sheltering</td>
+					</tr>
+					<tr>
+						<th>Attachment:</th>
+					</tr>
+					<tr>
+						<td>Supportive</td>
+						<td>Encouraging</td>
+						<td>Impersonal</td>
+						<td>Amorous</td>
+						<td>Indulgent</td>
+					</tr>
+				</table>
+			</div>
+			<div class="design_BOD">
+				<h2>BOD</h2>
+				<table id="negative_BOD">
+					<tr>
+						<th>Authority:</th>
+					</tr>
+					<tr>
+						<td>Manipulative</td>
+						<td>Rule-based</td>
+						<td>Conformist</td>
+						<td>Dictatorial</td>
+						<td>Menacing</td>
+					</tr>
+					<tr>
+						<th>Potency:</th>
+					</tr>
+					<tr>
+						<td>Impotent</td>
+						<td>Withholding</td>
+						<td>Controlling</td>
+						<td>Despotic</td>
+						<td>Violating</td>
+					</tr>
+					<tr>
+						<th colspan="2">Patriarchal Privilege:</th>
+					</tr>
+					<tr>
+						<td>Exploitative</td>
+						<td>Snobbish</td>
+						<td>Unfaithful</td>
+						<td>Abusive</td>
+						<td>Tyrannical</td>
+					</tr>
+					<tr>
+						<th>Attachment:</th>
+					</tr>
+					<tr>
+						<td>Cloying</td>
+						<td>Cool</td>
+						<td>Objectifying</td>
+						<td>Jealous</td>
+						<td>Sadistic</td>
+					</tr>
+				</table>
+				<table id="positive_BOD">
+					<tr>
+						<th>Authority:</th>
+					</tr>
+					<tr>
+						<td>Communitarian</td>
+						<td>Rational</td>
+						<td>Legal</td>
+						<td class="show_rescue">Physical</td>
+						<td class="show_temptation_wealth">Financial</td>
+					</tr>
+					<tr>
+						<th>Potency in:</th>
+					</tr>
+					<tr>
+						<td class="show_seduction" class="show_temptation">Sexuality</td>
+						<td class="show_temptation">Knowledge</td>
+						<td class="show_temptation">Legal System</td>
+						<td class="show_temptation">Fighting</td>
+						<td class="show_temptation" class="show_temptation_wealth">Wealth</td>
+					</tr>
+					<tr>
+						<th>Patriarchal:</th>
+					</tr>
+					<tr>
+						<td class="show_rescue">Pacifist</td>
+						<td>Egalitarian</td>
+						<td class="show_rescue">Punishment</td>
+						<td class="show_rescue">Macho Gallantry</td>
+						<td class="show_rescue">Sheltering</td>
+					</tr>
+					<tr>
+						<th>Attachment:</th>
+					</tr>
+					<tr>
+						<td class="show_rescue">Supportive</td>
+						<td>Encouraging</td>
+						<td>Impersonal</td>
+						<td class="show_seduction" class="show_temptation">Amorous</td>
+						<td>Indulgent</td>
+					</tr>
+				</table>
+			</div>
+			<div id="step3" class="step">
+				<h1>Step Three. Choose Character Attributes</h1>
+				<p>Click to choose attributes from multiple columns for BOG and BOD, such as a comformist who is unfaithful but highly jealous. Story cards will be generated based on the attributes assigned to each character. Click Generate Story Cards button after you finish.</p>
+				<p id="note_text">* The attribute tables above are based on the moral quality you defined at the Step One.</p>
+				<button id="confirm_character_button">Generate Story Cards</button>
+			</div>
+		</div>
+
+
 	</div>
 	<script src="./script/jquery.range.js"></script>
 	<script src="./script/selectize.min.js"></script>
