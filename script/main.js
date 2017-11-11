@@ -284,47 +284,82 @@
     })
 
     //table click
-    $('td').click(function(){
-        $(this).css('border','2px solid #d74276');
-    })
+    $('.design_BOG td').toggle(
+        function(){
+            $(this).css('border','2px solid #d74276');},
+        function(){
+            $(this).css('border','2px solid #fbeff0');}
+    )
 
-    $('.show_violence').click(function(){
-        $('.threat').show();
-        $('.fear').show();
-        $('.revenge').show();
-        $('.violence').show();
-        $('.battle').show();
-    })
+    $('.design_BOD td').toggle(
+        function(){
+            $(this).css('border','2px solid #d74276');},
+        function(){
+            $(this).css('border','2px solid #fff');}
+    )
 
-    $('.hide_violence').click(function(){
+    $('.show_violence').toggle(
+        function(){
+            $('.threat').show();
+            $('.fear').show();
+            $('.revenge').show();
+            $('.violence').show();
+            $('.battle').show();},
+        function(){
+            $('.threat').hide();
+            $('.fear').hide();
+            $('.revenge').hide();
+            $('.violence').hide();
+            $('.battle').hide();}
+    )
+
+    $('.hide_violence').toggle(function(){
         $('.threat').hide();
         $('.fear').hide();
         $('.battle').hide();
     })
 
-    $('.show_suspicion').click(function(){
-        $('.suspicion').show();
-    })
+    $('.show_suspicion').toggle(
+        function(){
+            $('.suspicion').show();},
+        function(){
+            $('.suspicion').hide();}
+    )
 
-    $('.show_fear_poverty').click(function(){
-        $('.fear-poverty').show();
-    })
+    $('.show_fear_poverty').toggle(
+        function(){
+            $('.fear-poverty').show();},
+        function(){
+            $('.fear-poverty').hide();}
+    )
 
-    $('.show_seduction').click(function(){
-        $('.seduction').show();
-    })
+    $('.show_seduction').toggle(
+        function(){
+            $('.seduction').show();},
+        function(){
+            $('.seduction').hide();}
+    )
 
-    $('.show_temptation').click(function(){
-        $('.temptation').show();
-    })
+    $('.show_temptation').toggle(
+        function(){
+            $('.temptation').show();},
+        function(){
+            $('.temptation').hide();}
+    )
 
-    $('.show_temptation_wealth').click(function(){
-        $('.temptation_wealth').show();
-    })
+    $('.show_temptation_wealth').toggle(
+        function(){
+            $('.temptation_wealth').show();},
+        function(){
+            $('.temptation_wealth').hide();}
+    )
 
-    $('.show_rescue').click(function(){
-        $('.temptation_rescue').show();
-    })
+    $('.show_rescue').toggle(
+        function(){
+            $('.temptation_rescue').show();},
+        function(){
+            $('.temptation_rescue').hide();}
+    )
 
 
 
