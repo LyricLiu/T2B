@@ -11,6 +11,7 @@
     //0 handsome haircut 
     var hair_BOG = 0;
     var hair_BOD = 0;
+    var camelot = false;
 
 
     $(document).ready(function() {
@@ -85,6 +86,55 @@
 	$('#status_BOD').selectize({
     	sortField: 'text'
 	});
+
+    $('#status_camelot_BOG').selectize({
+        sortField: 'text'
+    });
+
+    $('#status_camelot_BOD').selectize({
+        sortField: 'text'
+    });
+
+    //choose era, change the status dropdown box
+    $('#modern_BOG').click(function(){
+        $('#camelot_BOG').prop('checked', false);
+        $('#camelot_BOD').prop('checked', false);
+        $('#modern_BOD').prop('checked', true);
+        camelot = false;
+        $('#modern_input_BOG').show();
+        $('#modern_input_BOD').show();
+        $('#camelot_input_BOG').hide();
+        $('#camelot_input_BOD').hide();
+    });
+
+    $('#camelot_BOG').click(function(){
+        $('#modern_BOG').prop('checked', false);
+        $('#camelot_BOD').prop('checked', true);
+        $('#modern_BOD').prop('checked', false);
+        camelot = true;
+        $('#modern_input_BOG').hide();
+        $('#modern_input_BOD').hide();
+        $('#camelot_input_BOG').show();
+        $('#camelot_input_BOD').show();
+    });
+
+    $('#modern_BOD').click(function(){
+        $('#camelot_BOD').prop('checked', false);
+        $('#camelot_BOG').prop('checked', false);
+        $('#modern_BOG').prop('checked', true);
+        camelot = false;
+        $('#modern_input_BOG').show();
+        $('#modern_input_BOD').show();
+        $('#camelot_input_BOG').hide();
+        $('#camelot_input_BOD').hide();
+    });
+
+    $('#camelot_BOD').click(function(){
+        $('#modern_BOD').prop('checked', false);
+        $('#camelot_BOG').prop('checked', true);
+        $('#modern_BOG').prop('checked', false);
+        camelot = true;
+    });
 
     //button control 
 
@@ -163,32 +213,32 @@
     $('#generate_character_button').click(function(){
         if (($('#status_BOG').attr('value')=='clerk')||($('#status_BOG').attr('value')=='sale')){
             cloth_BOG = 1;
-        }else if($('#status_BOG').attr('value')=='waiter'){
+        }else if(($('#status_BOG').attr('value')=='waiter')||($('#status_BOG').attr('value')=='entrepreneur')||($('#status_BOG').attr('value')=='billionaire')){
             cloth_BOG = 2;
-        }else if(($('#status_BOG').attr('value')=='manager')||($('#status_BOG').attr('value')=='politician')){
+        }else if(($('#status_BOG').attr('value')=='manager')||($('#status_BOG').attr('value')=='ceo')||($('#status_BOG').attr('value')=='politician')){
             cloth_BOG = 3;
-        }else if($('#status_BOG').attr('value')=='gangster'){
+        }else if($('#status_BOG').attr('value')=='actor'){
+            cloth_BOD = 4;
+        }else if(($('#status_BOG').attr('value')=='gangster')||($('#status_BOG').attr('value')=='rock')){
             cloth_BOG = 5;
-        }else if($('#status_BOG').attr('value')=='coach'){
+        }else if(($('#status_BOG').attr('value')=='coach')||($('#status_BOG').attr('value')=='athlete')||($('#status_BOG').attr('value')=='fitness')){
             cloth_BOG = 6;
         }else{
             cloth_BOG = 0;
         }
 
-        if($('#status_BOD').attr('value')=='clerk'){
+        if(($('#status_BOD').attr('value')=='clerk')||($('#status_BOD').attr('value')=='sale')){
             cloth_BOD = 1;
-        }else if(($('#status_BOD').attr('value')=='entrepreneur')||($('#status_BOD').attr('value')=='billionaire')){
+        }else if(($('#status_BOD').attr('value')=='waiter')||($('#status_BOD').attr('value')=='entrepreneur')||($('#status_BOD').attr('value')=='billionaire')){
             cloth_BOD = 2;
-        }else if(($('#status_BOD').attr('value')=='ceo')||($('#status_BOD').attr('value')=='politician')){
+        }else if(($('#status_BOD').attr('value')=='manager')||($('#status_BOD').attr('value')=='ceo')){
             cloth_BOD = 3;
         }else if($('#status_BOD').attr('value')=='actor'){
             cloth_BOD = 4;
-        }else if($('#status_BOD').attr('value')=='rock'){
+        }else if(($('#status_BOD').attr('value')=='rock')||($('#status_BOD').attr('value')=='gangster')){
             cloth_BOD = 5;
-        }else if(($('#status_BOD').attr('value')=='athlete')||($('#status_BOD').attr('value')=='fitness')){
+        }else if(($('#status_BOD').attr('value')=='coach')||($('#status_BOD').attr('value')=='athlete')||($('#status_BOD').attr('value')=='fitness')){
             cloth_BOD = 6;
-        }else if($('#status_BOD').attr('value')=='superman'){
-            cloth_BOD = 7;
         }else{
             cloth_BOD = 0;
         }

@@ -36,26 +36,30 @@
 						</div>
 					</div>
 					<div class="design_block">
-						<h4>Handsomeness:</h4>
+						<h4>Attractiveness:</h4>
 						<div class="slider">
-							<span class="slider_text_left">Not Handsome</span>
-							<span class="slider_text_right">Handsome</span>
+							<span class="slider_text_left">Not Attractive</span>
+							<span class="slider_text_right">Attractive</span>
 							<div class="slider_body">
 								<input type="hidden" id="slider_handsome_BOG" value="0" />
 							</div>
 						</div>
 					</div>
-					<div class="design_block">
-						<h4>Skin Color:</h4>
-						<div class="color_palette">
-							<div id="white_BOG" class="color"></div>
-							<div id="yellow_BOG" class="color"></div>
-							<div id="black_BOG" class="color"></div>
+					<div class="line"><div></div></div>
+					<div class="design_block" id="era_block">
+						<h4>Era:</h4>
+						<div class="check_box">
+							<input type="checkbox" id="modern_BOG" value="modern">
+    						<label for="modern_BOG">Modern World</label>	
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="camelot_BOG" value="camelot">
+    						<label for="camelot_BOG">Camelot</label>
 						</div>
 					</div>
 					<div class="design_block">
 						<h4>Status/Occupation:</h4>
-						<div class="status_input">
+						<div class="status_input" id="modern_input_BOG">
 							<select id="status_BOG" placeholder="Click to select">
 								<option value="Click to select"></option>
 								<option value="teacher">Primary School Teacher</option>
@@ -69,7 +73,45 @@
 								<option value="unemployed">Unemployed</option>
 								<option value="politician">Politician</option>
 								<option value="gangster">Gangster</option>
+								<option value="actor">Actor</option> 
+								<option value="rock">Rock Star</option>
+								<option value="fitness">Fitness Instructor</option>
+								<option value="athlete">Athlete</option>
+								<option value="ceo">CEO</option>
+								<option value="artist">Artist</option>
+								<option value="entrepreneur">Entrepreneur</option>
+								<option value="billionaire">Billionaire</option>
+								<option value="free">Freelancer</option>
+								<option value="gangster">Gangster</option>
 							</select>
+						</div>
+						<div class="status_input" id="camelot_input_BOG">
+							<select id="status_camelot_BOG" placeholder="Click to select">
+								<option value="Click to select"></option>
+								<option value="king">King</option>
+								<option value="prince">Bastard Prince</option>
+								<option value="owner">Knight</option>
+								<option value="clerk">Squire</option>
+							</select>
+						</div>
+					</div>
+					<div class="design_block" id="color_block">
+						<h4>Skin Color:</h4>
+						<div class="color_palette">
+							<div id="white_BOG" class="color"></div>
+							<div id="yellow_BOG" class="color"></div>
+							<div id="black_BOG" class="color"></div>
+						</div>
+					</div>
+					<div class="design_block">
+						<h4>Gender:</h4>
+						<div class="check_box_1">
+							<input type="checkbox" id="female" value="female" disabled>
+    						<label for="female" id="grey_text">Female (to continue)</label>	
+						</div>
+						<div class="check_box_1">
+							<input type="checkbox" id="male" value="male" checked>
+    						<label for="male">Male</label>
 						</div>
 					</div>
 				</div>	
@@ -89,16 +131,65 @@
 						</div>
 					</div>
 					<div class="design_block">
-						<h4>Handsomeness:</h4>
+						<h4>Attractiveness:</h4>
 						<div class="slider">
-							<span class="slider_text_left">Not Handsome</span>
-							<span class="slider_text_right">Handsome</span>
+							<span class="slider_text_left">Not Attractive</span>
+							<span class="slider_text_right">Attractive</span>
 							<div class="slider_body">
 								<input type="hidden" id="slider_handsome_BOD" value="0" />
 							</div>
 						</div>
 					</div>
+					<div class="line"><div></div></div>
+					<div class="design_block" id="era_block">
+						<h4>Era:</h4>
+						<div class="check_box">
+							<input type="checkbox" id="modern_BOD" value="modern">
+    						<label for="modern_BOD">Modern World</label>	
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="camelot_BOD" value="camelot">
+    						<label for="camelot_BOD">Camelot</label>
+						</div>
+					</div>
 					<div class="design_block">
+						<h4>Status/Occupation:</h4>
+						<div class="status_input" id="modern_input_BOD">
+							<select id="status_BOD" placeholder="Click to select">
+								<option value="Click to select"></option>
+								<option value="actor">Actor</option> 
+								<option value="rock">Rock Star</option>
+								<option value="fitness">Fitness Instructor</option>
+								<option value="athlete">Athlete</option>
+								<option value="ceo">CEO</option>
+								<option value="artist">Artist</option>
+								<option value="politician">Politician</option>
+								<option value="entrepreneur">Entrepreneur</option>
+								<option value="billionaire">Billionaire</option>
+								<option value="free">Freelancer</option>
+								<option value="clerk">Office Clerk</option>
+								<option value="gangster">Gangster</option>
+								<option value="teacher">Primary School Teacher</option>
+								<option value="waiter">Restaurant Waiter</option>
+								<option value="owner">Shop Owner</option>
+								<option value="sale">Retail salesperson</option>
+								<option value="developer">Software developer</option>
+								<option value="manager">Financial manager</option>
+								<option value="coach">Coach</option>
+								<option value="unemployed">Unemployed</option>
+							</select>
+						</div>
+						<div class="status_input" id="camelot_input_BOD">
+							<select id="status_camelot_BOD" placeholder="Click to select">
+								<option value="Click to select"></option>
+								<option value="king">King</option>
+								<option value="prince">Bastard Prince</option>
+								<option value="owner">Knight</option>
+								<option value="clerk">Squire</option>
+							</select>
+						</div>
+					</div>
+					<div class="design_block" id="color_block">
 						<h4>Skin Color:</h4>
 						<div class="color_palette">
 							<div id="white_BOD" class="color"></div>
@@ -107,24 +198,14 @@
 						</div>
 					</div>
 					<div class="design_block">
-						<h4>Status/Occupation:</h4>
-						<div class="status_input">
-							<select id="status_BOD" placeholder="Click to select">
-								<option value="Click to select"></option>
-								<option value="actor">Actor</option> 
-								<option value="rock">Rock Star</option>
-								<option value="fitness">Fitness Instructor</option>
-								<option value="athlete">Athlete</option>
-								<option value="superman">Superman</option>
-								<option value="ceo">CEO</option>
-								<option value="artist">Artist</option>
-								<option value="politician">Politician</option>
-								<option value="entrepreneur">Entrepreneur</option>
-								<option value="billionaire">Billionaire</option>
-								<option value="free">Freelancer</option>
-								<option value="clerk">Office Clerk</option>
-
-							</select>
+						<h4>Gender:</h4>
+						<div class="check_box_1">
+							<input type="checkbox" id="female" value="female" disabled>
+    						<label for="female" id="grey_text">Female (to continue)</label>	
+						</div>
+						<div class="check_box_1">
+							<input type="checkbox" id="male" value="male" checked>
+    						<label for="male">Male</label>
 						</div>
 					</div>
 				</div>	
