@@ -143,7 +143,7 @@ button{
 
 .BOG-skin0, .BOG-skin1, .BOG-skin2,
 .BOG-cloth0, .BOG-cloth1, .BOG-cloth2, .BOG-cloth3, .BOG-cloth4, .BOG-cloth5,
-.BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2,
+.BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2, .BOG-cloth7,
 .BOG-hair0, .BOG-hair1,
 .BOG-skin0, .BOG-skin1, .BOG-skin2{
 	display: none;
@@ -416,6 +416,22 @@ label{
 
 
 /* Generate_character */
+#generate_BOG_camelot{
+	position: absolute;
+	display: none;
+}
+
+#generate_BOD_camelot{
+	position: absolute;
+	display: none;
+}
+
+#BOG_camelot_image,
+#BOD_camelot_image{
+	margin-top: 35px;
+	width:400px;
+}
+
 #generate_character{
 	position: absolute;
 	width:100%;
@@ -529,6 +545,11 @@ label{
 	background-image: url("../img/character/cloth5_1.png");
 }
 
+#cloth7{
+	background-image: url("../img/character/cloth7.png");
+}
+
+
 #cloth5{
 	background-image: url("../img/character/cloth5.png");
 }
@@ -545,9 +566,6 @@ label{
 	background-image: url("../img/character/cloth6_3.png");
 }
 
-#cloth7{
-	background-image: url("../img/character/cloth7.png");
-}
 
 #BOG_skin1{
 	background-image: url("../img/character/BOG_skin1.png");
