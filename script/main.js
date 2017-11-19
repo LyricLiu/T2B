@@ -133,6 +133,10 @@
         $('#camelot_BOG').prop('checked', true);
         $('#modern_BOG').prop('checked', false);
         camelot = true;
+        $('#modern_input_BOG').hide();
+        $('#modern_input_BOD').hide();
+        $('#camelot_input_BOG').show();
+        $('#camelot_input_BOD').show();
     });
 
     //button control 
@@ -171,9 +175,12 @@
         if (camelot == true) {
             $('.card_modern').hide();
             $('.card_camelot').show();
+            $('#battle').show();
+            $('#BOGproposal').hide();
         } else {
             $('.card_modern').show();
             $('.card_camelot').hide();
+            $('#battle').hide();
         }
 
         if (skin_BOG == 0) {
@@ -191,6 +198,23 @@
         } else {
             $('.BOD-skin2').show();
         }
+
+        if ($('#slider_handsome_BOD').attr('value') > 0){
+            $('#love_first').show();
+            if($('#slider_moral_BOD').attr('value') < 2){
+                $('#seduction').show();
+            }
+        }
+
+        if(($('#slider_moral_BOD').attr('value') < 0) && ($('#slider_moral_BOD').attr('value') < 0)){
+            $('#happy_alone').show();
+        }
+
+        if(($('#status_camelot_BOD').attr('value') == 'king')||($('#status_camelot_BOG').attr('value') == 'king')||($('#status_BOG').attr('value') == 'billionaire')||($('#status_BOD').attr('value') == 'billionaire')||($('#status_BOD').attr('value') == 'ceo')){
+            $('#temptation_wealth').show();
+            $('#fear_poverty').show();
+        }
+
     })
 
     //select skin
@@ -475,78 +499,81 @@
 
     $('.show_violence').toggle(
         function() {
-            $('.threat').show();
-            $('.fear').show();
-            $('.revenge').show();
-            $('.violence').show();
-            $('.battle').show();
+            $('#threat').show();
+            $('#fear').show();
+            $('#revenge').show();
+            $('#violence').show();
         },
         function() {
-            $('.threat').hide();
-            $('.fear').hide();
-            $('.revenge').hide();
-            $('.violence').hide();
-            $('.battle').hide();
+            $('#threat').hide();
+            $('#fear').hide();
+            $('#revenge').hide();
+            $('#violence').hide();
         }
     )
 
-    $('.hide_violence').toggle(function() {
-        $('.threat').hide();
-        $('.fear').hide();
-        $('.battle').hide();
-    })
+    $('.hide_violence').toggle(
+        function() {
+            $('#threat').hide();
+            $('#fear').hide();
+        },
+        function(){
+            $('#threat').show();
+            $('#fear').show();
+        }
+    )
 
     $('.show_suspicion').toggle(
         function() {
-            $('.suspicion').show();
+            $('#suspicion').show();
         },
         function() {
-            $('.suspicion').hide();
+            $('#suspicion').hide();
         }
     )
 
     $('.show_fear_poverty').toggle(
         function() {
-            $('.fear_poverty').show();
+            $('#fear_poverty').show();
         },
         function() {
-            $('.fear_poverty').hide();
+            $('#fear_poverty').hide();
         }
     )
 
     $('.show_seduction').toggle(
         function() {
-            $('.seduction').show();
+            $('#seduction').show();
         },
         function() {
-            $('.seduction').hide();
+            $('#seduction').hide();
         }
     )
 
     $('.show_temptation').toggle(
         function() {
-            $('.temptation').show();
+            $('#temptation').show();
         },
         function() {
-            $('.temptation').hide();
+            $('#temptation').hide();
         }
     )
 
     $('.show_temptation_wealth').toggle(
         function() {
-            $('.temptation_wealth').show();
+            $('#temptation_wealth').show();
         },
         function() {
-            $('.temptation_wealth').hide();
+            $('#temptation_wealth').hide();
         }
     )
 
     $('.show_rescue').toggle(
         function() {
-            $('.temptation_rescue').show();
+            $('#rescue').show();
         },
         function() {
-            $('.temptation_rescue').hide();
+            $('#rescue').hide();
         }
     )
 
