@@ -141,6 +141,10 @@ button{
 	display:none;
 }
 
+#design_character{
+	display: none;
+}
+
 .BOG-skin0, .BOG-skin1, .BOG-skin2,
 .BOG-cloth0, .BOG-cloth1, .BOG-cloth2, .BOG-cloth3, .BOG-cloth4, .BOG-cloth5,
 .BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2, .BOG-cloth7,
@@ -647,12 +651,58 @@ th {
 }
 
 #note_text{
+	position: absolute;
 	font-size: 0.8em;
 	margin-top: 8px;
-	color:#e29fba;
+	margin-left:75px;
 }
 
+#generate_cards{
+	position: absolute;
+	background-color: #fbeff0;
+	width:100%;
+	height:100%;
+}
 
+#display_card{
+	position: absolute;
+	width:70%;
+	left:5%;
+	top:30px;
+	height:100%;
+}
+
+.card_modern,
+.card_camelot{
+	overflow:hidden;
+	display: none;
+	width:100%;
+	height:100%;
+}
+
+.card_drag{
+	position: relative;
+	width:140px;
+	height:220px;
+	background-color: #fff;
+	border-radius: 10px;
+	float:left;
+	margin:10px;
+}
+
+.card_drag h4{
+	position: absolute;
+	top:10px;
+	width:100%;
+	text-align: center;
+	font-family: Gill Sans MT, sans-serif;
+}
+
+.card_drag img{
+	position: absolute;
+	width:140px;
+	bottom: 0;
+}
 
 
 

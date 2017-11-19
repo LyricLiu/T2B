@@ -164,6 +164,34 @@
         }
     });
 
+    $('#generate_cards_button').click(function() {
+        $('#design_personality').hide();
+        $('#generate_cards').show();
+
+        if (camelot == true) {
+            $('.card_modern').hide();
+            $('.card_camelot').show();
+        } else {
+            $('.card_modern').show();
+            $('.card_camelot').hide();
+        }
+
+        if (skin_BOG == 0) {
+            $('.BOG-skin0').show();
+        } else if (skin_BOG == 1) {
+            $('.BOG-skin1').show();
+        } else {
+            $('.BOG-skin2').show();
+        }
+
+        if (skin_BOD == 0) {
+            $('.BOD-skin0').show();
+        } else if (skin_BOD == 1) {
+            $('.BOD-skin1').show();
+        } else {
+            $('.BOD-skin2').show();
+        }
+    })
 
     //select skin
     $('#white_BOG').click(function() {
@@ -211,7 +239,7 @@
 
     $('#generate_character_button').click(function() {
         if (camelot == false) {
-            if (($('#status_BOG').attr('value') == 'teacher') ||($('#status_BOG').attr('value') == 'clerk') || ($('#status_BOG').attr('value') == 'sale')) {
+            if (($('#status_BOG').attr('value') == 'teacher') || ($('#status_BOG').attr('value') == 'clerk') || ($('#status_BOG').attr('value') == 'sale')) {
                 cloth_BOG = 1;
             } else if (($('#status_BOG').attr('value') == 'entrepreneur') || ($('#status_BOG').attr('value') == 'billionaire')) {
                 cloth_BOG = 2;
@@ -223,7 +251,7 @@
                 cloth_BOG = 5;
             } else if (($('#status_BOG').attr('value') == 'coach') || ($('#status_BOG').attr('value') == 'athlete') || ($('#status_BOG').attr('value') == 'fitness')) {
                 cloth_BOG = 6;
-            } else if($('#status_BOG').attr('value') == 'waiter'){
+            } else if ($('#status_BOG').attr('value') == 'waiter') {
                 cloth_BOG = 7;
             } else {
                 cloth_BOG = 0;
@@ -241,7 +269,7 @@
                 cloth_BOD = 5;
             } else if (($('#status_BOD').attr('value') == 'coach') || ($('#status_BOD').attr('value') == 'athlete') || ($('#status_BOD').attr('value') == 'fitness')) {
                 cloth_BOD = 6;
-            } else if($('#status_BOD').attr('value') == 'waiter'){
+            } else if ($('#status_BOD').attr('value') == 'waiter') {
                 cloth_BOD = 7;
             } else {
                 cloth_BOD = 0;
@@ -345,80 +373,80 @@
 
             /* judge Camelot custome*/
 
-            if ($('#status_camelot_BOG').attr('value') == 'king'){
-                if(skin_BOG == 0){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_king_white.png');
-                }else if(skin_BOG == 1){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_king_yellow.png');
-                }else{
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_king_black.png');
+            if ($('#status_camelot_BOG').attr('value') == 'king') {
+                if (skin_BOG == 0) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_king_white.png');
+                } else if (skin_BOG == 1) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_king_yellow.png');
+                } else {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_king_black.png');
                 }
-            }else if($('#status_camelot_BOG').attr('value') == 'bastard'){
-                $('#BOG_camelot_image').css('width','410px');
-                $('#BOG_camelot_image').css('margin-top','45px');
-                if(skin_BOG == 0){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_bastard_white.png');
-                }else if(skin_BOG == 1){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_bastard_yellow.png');
-                }else{
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_bastard_black.png');
+            } else if ($('#status_camelot_BOG').attr('value') == 'bastard') {
+                $('#BOG_camelot_image').css('width', '410px');
+                $('#BOG_camelot_image').css('margin-top', '45px');
+                if (skin_BOG == 0) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_bastard_white.png');
+                } else if (skin_BOG == 1) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_bastard_yellow.png');
+                } else {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_bastard_black.png');
                 }
-            }else if($('#status_camelot_BOG').attr('value') == 'knight'){
-                $('#BOD_camelot_image').css('margin-top','25px');
-                if(skin_BOG == 0){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_knight_white.png');
-                }else if(skin_BOG == 1){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_knight_yellow.png');
-                }else{
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_knight_black.png');
+            } else if ($('#status_camelot_BOG').attr('value') == 'knight') {
+                $('#BOD_camelot_image').css('margin-top', '25px');
+                if (skin_BOG == 0) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_knight_white.png');
+                } else if (skin_BOG == 1) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_knight_yellow.png');
+                } else {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_knight_black.png');
                 }
-            }else if($('#status_camelot_BOG').attr('value') == 'squire'){
-                if(skin_BOG == 0){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_squire_white.png');
-                }else if(skin_BOG == 1){
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_squire_yellow.png');
-                }else{
-                    $('#BOG_camelot_image').attr('src','./img/character_camelot/BOG_squire_black.png');
+            } else if ($('#status_camelot_BOG').attr('value') == 'squire') {
+                if (skin_BOG == 0) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_squire_white.png');
+                } else if (skin_BOG == 1) {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_squire_yellow.png');
+                } else {
+                    $('#BOG_camelot_image').attr('src', './img/character_camelot/BOG_squire_black.png');
                 }
             }
 
 
-            if ($('#status_camelot_BOD').attr('value') == 'king'){
-                if(skin_BOD == 0){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_king_white.png');
-                }else if(skin_BOD == 1){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_king_yellow.png');
-                }else{
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_king_black.png');
+            if ($('#status_camelot_BOD').attr('value') == 'king') {
+                if (skin_BOD == 0) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_king_white.png');
+                } else if (skin_BOD == 1) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_king_yellow.png');
+                } else {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_king_black.png');
                 }
-            }else if($('#status_camelot_BOD').attr('value') == 'bastard'){
-                $('#BOD_camelot_image').css('width','410px');
-                $('#BOD_camelot_image').css('margin-top','45px');
-                if(skin_BOD == 0){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_bastard_white.png');
-                }else if(skin_BOD == 1){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_bastard_yellow.png');
-                }else{
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_bastard_black.png');
+            } else if ($('#status_camelot_BOD').attr('value') == 'bastard') {
+                $('#BOD_camelot_image').css('width', '410px');
+                $('#BOD_camelot_image').css('margin-top', '45px');
+                if (skin_BOD == 0) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_bastard_white.png');
+                } else if (skin_BOD == 1) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_bastard_yellow.png');
+                } else {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_bastard_black.png');
                 }
-            }else if($('#status_camelot_BOD').attr('value') == 'knight'){
-                $('#BOD_camelot_image').css('width','410px');
-                $('#BOD_camelot_image').css('margin-top','30px');
-                if(skin_BOD == 0){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_knight_white.png');
-                }else if(skin_BOD == 1){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_knight_yellow.png');
-                }else{
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_knight_black.png');
+            } else if ($('#status_camelot_BOD').attr('value') == 'knight') {
+                $('#BOD_camelot_image').css('width', '410px');
+                $('#BOD_camelot_image').css('margin-top', '30px');
+                if (skin_BOD == 0) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_knight_white.png');
+                } else if (skin_BOD == 1) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_knight_yellow.png');
+                } else {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_knight_black.png');
                 }
-            }else if($('#status_camelot_BOD').attr('value') == 'squire'){
-                $('#BOD_camelot_image').css('width','410px');
-                if(skin_BOD == 0){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_squire_white.png');
-                }else if(skin_BOD == 1){
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_squire_yellow.png');
-                }else{
-                    $('#BOD_camelot_image').attr('src','./img/character_camelot/BOD_squire_black.png');
+            } else if ($('#status_camelot_BOD').attr('value') == 'squire') {
+                $('#BOD_camelot_image').css('width', '410px');
+                if (skin_BOD == 0) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_squire_white.png');
+                } else if (skin_BOD == 1) {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_squire_yellow.png');
+                } else {
+                    $('#BOD_camelot_image').attr('src', './img/character_camelot/BOD_squire_black.png');
                 }
             }
 
@@ -479,10 +507,10 @@
 
     $('.show_fear_poverty').toggle(
         function() {
-            $('.fear-poverty').show();
+            $('.fear_poverty').show();
         },
         function() {
-            $('.fear-poverty').hide();
+            $('.fear_poverty').hide();
         }
     )
 
@@ -521,6 +549,7 @@
             $('.temptation_rescue').hide();
         }
     )
+
 
 
 
