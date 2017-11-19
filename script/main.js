@@ -270,7 +270,7 @@
             } else if (($('#status_BOG').attr('value') == 'manager') || ($('#status_BOG').attr('value') == 'ceo') || ($('#status_BOG').attr('value') == 'politician')) {
                 cloth_BOG = 3;
             } else if ($('#status_BOG').attr('value') == 'actor') {
-                cloth_BOD = 4;
+                cloth_BOG = 4;
             } else if (($('#status_BOG').attr('value') == 'gangster') || ($('#status_BOG').attr('value') == 'rock')) {
                 cloth_BOG = 5;
             } else if (($('#status_BOG').attr('value') == 'coach') || ($('#status_BOG').attr('value') == 'athlete') || ($('#status_BOG').attr('value') == 'fitness')) {
