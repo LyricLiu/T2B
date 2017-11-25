@@ -650,11 +650,15 @@ th {
 	color:#20304c;
 }
 
-#note_text{
+.note_text{
 	position: absolute;
 	font-size: 0.8em;
 	margin-top: 8px;
 	margin-left:75px;
+}
+
+.note_text span{
+	font-size: 1em;
 }
 
 #generate_cards{
@@ -752,6 +756,16 @@ th {
 	text-align: center;
 	color:#eadfe0;
 	margin-top: 25px;
+}
+
+.card_drag p{
+	position: absolute;
+	width:100%;
+	font-family: Lato, sans-serif;
+	top:30px;
+	text-align: center;
+	font-size: 0.7em;
+	color:#163e6e;
 }
 
 

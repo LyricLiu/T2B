@@ -166,6 +166,9 @@
         } else {
             $('#positive_BOD').show();
         }
+
+        $('#BOG_moral_value').text($('#slider_moral_BOG').attr('value'));
+        $('#BOD_moral_value').text($('#slider_moral_BOD').attr('value'));
     });
 
     $('#generate_cards_button').click(function() {
@@ -206,7 +209,7 @@
             }
         }
 
-        if(($('#slider_moral_BOD').attr('value') < 0) && ($('#slider_moral_BOD').attr('value') < 0)){
+        if(($('#slider_moral_BOD').attr('value') <=0) && ($('#slider_moral_BOD').attr('value') <=0)){
             $('#happy_alone').show();
         }
 
@@ -562,9 +565,11 @@
     $('.show_temptation_wealth').toggle(
         function() {
             $('#temptation_wealth').show();
+            $('#temptation').show();
         },
         function() {
             $('#temptation_wealth').hide();
+            $('#temptation').hide();
         }
     )
 

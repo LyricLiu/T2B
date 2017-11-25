@@ -65,10 +65,10 @@
 								<option value="teacher">Primary School Teacher</option>
 								<option value="waiter">Restaurant Waiter</option>
 								<option value="owner">Shop Owner</option>
-								<option value="clerk">Office clerk</option>
-								<option value="sale">Retail salesperson</option>
-								<option value="developer">Software developer</option>
-								<option value="manager">Financial manager</option>
+								<option value="clerk">Office Clerk</option>
+								<option value="sale">Retail Salesperson</option>
+								<option value="developer">Software Developer</option>
+								<option value="manager">Financial Manager</option>
 								<option value="coach">Coach</option>
 								<option value="unemployed">Unemployed</option>
 								<option value="politician">Politician</option>
@@ -172,9 +172,9 @@
 								<option value="teacher">Primary School Teacher</option>
 								<option value="waiter">Restaurant Waiter</option>
 								<option value="owner">Shop Owner</option>
-								<option value="sale">Retail salesperson</option>
-								<option value="developer">Software developer</option>
-								<option value="manager">Financial manager</option>
+								<option value="sale">Retail Salesperson</option>
+								<option value="developer">Software Developer</option>
+								<option value="manager">Financial Manager</option>
 								<option value="coach">Coach</option>
 								<option value="unemployed">Unemployed</option>
 							</select>
@@ -276,8 +276,8 @@
 			</div>
 		</div>
 		<div id="design_personality">
-			<p id="note_text">The attribute tables below are based on the moral quality you defined at the Step One.</p>
 			<div class="design_BOG">
+				<p class="note_text">Based on your setting: Moral quality = <span id="BOG_moral_value">-3</span></p>
 				<h2>BOG</h2>
 				<table id="negative_BOG">
 					<tr>
@@ -294,7 +294,7 @@
 						<th>Potency:</th>
 					</tr>
 					<tr>
-						<td class="show_fear_poverty">Impotent</td>
+						<td>Impotent</td>
 						<td class="hide_violence">Withholding</td>
 						<td class="show_violence">Controlling</td>
 						<td class="show_violence">Despotic</td>
@@ -305,7 +305,7 @@
 					</tr>
 					<tr>
 						<td class="show_violence">Exploitative</td>
-						<td>Snobbish</td>
+						<td class="show_fear_poverty">Snobbish</td>
 						<td class="show_suspicion">Unfaithful</td>
 						<td class="show_violence">Abusive</td>
 						<td class="show_violence">Tyrannical</td>
@@ -365,6 +365,7 @@
 				</table>
 			</div>
 			<div class="design_BOD">
+				<p class="note_text">Based on your setting: Moral quality = <span id="BOD_moral_value">-3</span></p>
 				<h2>BOD</h2>
 				<table id="negative_BOD">
 					<tr>
@@ -392,7 +393,7 @@
 					</tr>
 					<tr>
 						<td>Exploitative</td>
-						<td>Snobbish</td>
+						<td class="show_fear_poverty">Snobbish</td>
 						<td>Unfaithful</td>
 						<td>Abusive</td>
 						<td>Tyrannical</td>
@@ -427,7 +428,7 @@
 						<td class="show_temptation">Knowledge</td>
 						<td class="show_temptation">Legal System</td>
 						<td class="show_temptation">Fighting</td>
-						<td class="show_temptation" class="show_temptation_wealth">Wealth</td>
+						<td class="show_temptation_wealth">Wealth</td>
 					</tr>
 					<tr>
 						<th>Patriarchal:</th>
@@ -458,7 +459,7 @@
 			</div>
 		</div>
 		<div id="generate_cards">
-			<p id="note_text">The story cards below are generated from the character attributes you defined at the Step three.</p>
+			<p class="note_text">The story cards below are generated from the character attributes you defined at the Step three.</p>
 			<div id="drag_morphemes">
 				<h2>Proppian Morphemes</h2>
 				<div class="drag_box">
@@ -530,6 +531,7 @@
 				</div>
 				<div class="card_drag" id="love_first">
 					<h4>Love at First Sight</h4>
+					<p>BOG's Addictiveness>0</p>
 					<div class="card_modern">
 						<img src="./img/card/love_first_0.png" class="BOD-skin0">
 						<img src="./img/card/love_first_1.png" class="BOD-skin1">
@@ -543,6 +545,7 @@
 				</div>
 				<div class="card_drag" id="rescue">
 					<h4>Rescue</h4>
+					<p>From Rescuing Attr. of BOD/G</p>
 					<img src="./img/card/rescue_0.png" class="BOD-skin0">
 					<img src="./img/card/rescue_1.png" class="BOD-skin1">
 					<img src="./img/card/rescue_2.png" class="BOD-skin2">
@@ -562,6 +565,7 @@
 				</div>
 				<div class="card_drag" id="seduction">
 					<h4>Seduction</h4>
+					<p>From Sexuality Attr. of BOG</p>
 					<img src="./img/card/seduction_0.png" class="BOD-skin0">
 					<img src="./img/card/seduction_1.png" class="BOD-skin1">
 					<img src="./img/card/seduction_2.png" class="BOD-skin2">
@@ -594,6 +598,7 @@
 				</div>
 				<div class="card_drag" id="suspicion">
 					<h4>Suspicion of BOG</h4>
+					<p>From Attr. Unfaithful</p>
 					<div class="card_modern">
 						<img src="./img/card/suspicion_0.png" class="BOG-skin0">
 						<img src="./img/card/suspicion_1.png" class="BOG-skin1">
@@ -637,6 +642,7 @@
 				</div>
 				<div class="card_drag" id="happy_alone">
 					<h4>Happy Alone</h4>
+					<p>Moral Quality of BOG/D is negative</p>
 					<img src="./img/card/happy_alone.png">
 				</div>
 				<div class="card_drag" id="alone">
@@ -644,19 +650,23 @@
 					<img src="./img/card/alone.png">
 				</div>
 				<div class="card_drag" id="fearBOG">
+					<p>From Violent Attr. of BOG</p>
 					<h4>Fear</h4>
 					<img src="./img/card/fearBOG.png">
 				</div>
 				<div class="card_drag" id="threat">
 					<h4>Threat</h4>
+					<p>From Violent Attr. of BOG</p>
 					<img src="./img/card/threat.png">
 				</div>
 				<div class="card_drag" id="revenge">
 					<h4>Revenge</h4>
+					<p>From Violent Attr. of BOG</p>
 					<img src="./img/card/revenge.png">
 				</div>
 				<div class="card_drag" id="fear_poverty">
 					<h4>Fear of Poverty</h4>
+					<p>From Attr. Snobbish</p>
 					<div class="card_modern">
 						<img src="./img/card/fear_poverty.png">
 					</div>
@@ -665,7 +675,8 @@
 					</div>
 				</div>
 				<div class="card_drag" id="temptation_wealth">
-					<h4>Temptation by Wealth</h4>
+					<h4>Tempt. by Wealth</h4>
+					<p>From Financial Attr. of BOG/D</p>
 					<div class="card_modern">
 						<img src="./img/card/temptation_wealth.png">
 					</div>
@@ -675,6 +686,7 @@
 				</div>
 				<div class="card_drag" id="violence">
 					<h4>Violence</h4>
+					<p>From Violent Attr. of BOG/D</p>
 					<img src="./img/card/violence.png">
 				</div>
 				<div class="card_drag" id="battle">
