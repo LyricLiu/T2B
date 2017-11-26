@@ -261,6 +261,11 @@
         skin_BOD = 2;
     })
 
+    $('#button_done').click(function(){
+        $('#final_board').show();
+        $('#generate_cards').hide();
+    })
+
 
     //Generate character
 
@@ -395,8 +400,12 @@
         } else {
             $('#generate_BOG_camelot').show();
             $('#generate_BOD_camelot').show();
+            $('#generate_BOG_camelot_small').show();
+            $('#generate_BOD_camelot_small').show();
             $('#generate_BOG_img').hide();
             $('#generate_BOD_img').hide();
+            $('#generate_BOG_modern_small').hide();
+            $('#generate_BOD_modern_small').hide();
 
             /* judge Camelot custome*/
 

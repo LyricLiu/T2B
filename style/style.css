@@ -141,7 +141,7 @@ button{
 	display:none;
 }
 
-#homepage{
+#final_board{
 	display: none;
 }
 
@@ -798,9 +798,52 @@ th {
 	position: relative;
 	float:left;
 	width:50%;
-	height:300px;
-	background-color: #fff;
+	height:230px;
+	border-bottom: 3px solid #fff;
+	overflow: hidden;
 }
+
+.info_B div{
+	position: absolute;
+}
+
+.summary{
+	width:250px;
+	position:absolute;
+	left:430px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.summary p{
+	margin-top: 10px;
+}
+
+#generate_BOG_modern_small,
+#generate_BOD_modern_small{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:0;
+	overflow: hidden;
+}
+
+#generate_BOG_modern_small div,
+#generate_BOD_modern_small div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#generate_BOD_camelot_small,
+#generate_BOG_camelot_small{
+	top:-35px;
+	display: none;
+}
+
+
+
 
 
 
