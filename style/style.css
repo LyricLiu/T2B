@@ -798,7 +798,7 @@ th {
 	position: relative;
 	float:left;
 	width:50%;
-	height:230px;
+	height:220px;
 	border-bottom: 3px solid #fff;
 	overflow: hidden;
 }
@@ -810,8 +810,7 @@ th {
 .summary{
 	width:250px;
 	position:absolute;
-	left:430px;
-	margin-top: 10px;
+	left:410px;
 	margin-bottom: 10px;
 }
 
@@ -842,7 +841,10 @@ th {
 	display: none;
 }
 
-
+#final_board span{
+	font-size: 1em;
+	color:#d74276;
+}
 
 
 

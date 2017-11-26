@@ -12,6 +12,8 @@
     var hair_BOG = 0;
     var hair_BOD = 0;
     var camelot = false;
+    var attribute_BOG = [];
+    var attribute_BOD = [];
 
 
     $(document).ready(function() {
@@ -259,11 +261,6 @@
         $('#white_BOD').css('border-bottom', '');
         $('#yellow_BOD').css('border-bottom', '');
         skin_BOD = 2;
-    })
-
-    $('#button_done').click(function(){
-        $('#final_board').show();
-        $('#generate_cards').hide();
     })
 
 
@@ -696,5 +693,63 @@
             $(structure + ' p').css('font-size','1.2em');
     })
 
+    //remove by value function 
+    function removeByValue(arr, val) {
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i] == val) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    //append attribute
+
+    $('.design_BOG td').toggle(
+        function() {
+            attribute_BOG.push($(this).text());
+        },
+        function() {
+            removeByValue(attribute_BOG,$(this).text());
+        }
+    )
+
+    $('.design_BOD td').toggle(
+        function() {
+            attribute_BOD.push($(this).text());
+        },
+        function() {
+            removeByValue(attribute_BOD,$(this).text());
+        }
+    )
+
+    //final page control
+
+    $('#button_done').click(function(){
+        $('#final_board').show();
+        $('#generate_cards').hide();
+
+        $('#value_moral_BOG').text($('#slider_moral_BOG').attr('value'));
+        $('#value_moral_BOD').text($('#slider_moral_BOD').attr('value'));
+        $('#value_attract_BOG').text($('#slider_handsome_BOG').attr('value'));
+        $('#value_attract_BOD').text($('#slider_handsome_BOD').attr('value'));
+
+        if(camelot==false){
+            $('#value_status_BOG').text($('#status_BOG').attr('value'));
+            $('#value_status_BOD').text($('#status_BOD').attr('value'));
+        }else{
+            $('#value_status_BOG').text($('#status_camelot_BOG').attr('value'));
+            $('#value_status_BOD').text($('#status_camelot_BOD').attr('value'));
+        }
+
+        $('#value_attr_BOG').text(attribute_BOG.slice(0,3).toString());
+        $('#value_attr_BOD').text(attribute_BOD.slice(0,3).toString());
+        var length_BOG = attribute_BOG.length;
+        $('#value_attr_BOG_2').text(attribute_BOG.slice(3,length_BOG).toString());
+        var length_BOD = attribute_BOD.length;
+        $('#value_attr_BOD_2').text(attribute_BOD.slice(3,length_BOD).toString());
+
+
+    })
 
 })();
