@@ -847,6 +847,52 @@ th {
 }
 
 
+#five_structure{
+	position: absolute;
+	width:92%;
+	left:4%;
+	height:calc(100% - 220px);
+	bottom: 0;
+}
+
+.final_display{
+	position: relative;
+	width:16%;
+	height:320px;
+	background-color: #fff;
+	border-radius: 10px;
+	float:left;
+	margin:2%;
+}
+
+.final_display h4{
+	position: absolute;
+	top:10px;
+	font-size: 1.2em;
+	width:100%;
+	text-align: center;
+	font-family: Gill Sans MT, sans-serif;
+	color:#162346;
+}
+
+.final_display p{
+	position: absolute;
+	top:37px;
+	width:100%;
+	text-align: center;
+	font-size: 0.8em;
+	color:#d74276;
+}
+
+.final_display img{
+	position: absolute;
+	width:100%;
+	bottom: 0;
+}
+
+
+
+
 
 
 

@@ -1,780 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8" />
-	<title>Tale of Two Boyfriends</title>
-	<link rel="stylesheet" type="text/css" href="./style/style.css">
-	<link rel="stylesheet" href="./style/jquery.range.css">
-	<link rel="stylesheet" href="./style/selectize.default.css">
-	<script src="./script/jquery.js"></script>
+    <meta charset="utf-8" />
+    <title>Tale of Two Boyfriends</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" href="./style/jquery.range.css">
+    <link rel="stylesheet" href="./style/selectize.default.css">
+    <script src="./script/jquery.js"></script>
 </head>
+
 <body>
-	<header></header>
-	<div>
-		<!--Front page-->
-		<div id="homepage">
-			<img id="title_image" src="./img/title.png">
-			<h2>Tale of Two Boyfriends</h2>
-			<p>This website provides a story pattern to help you create interactive narrative with dramatically meaningful varations for the interactor to explore.The story pattern is based on Janet H. Murray's W2P pattern which privileges the female position by evaluating the male figures as potential choices and divides male characters into Boyfriends of ObliGation (BOGs) and Boyfriends of Desire (BODs). On this website, you will be guilded to define two male characters as BOG and BOD. After that, character figures and possible plot cards will be generated to help you design your storyworld.</p>
-			<a href="">Read Janet H. Murray's article “A Tale of Two Boyfriends”</a>
-			<button id="create_story">Create a T2B story</button>
-		</div>
-		<!--Step 1 Design character-->
-		<div id="design_character">
-			<div class="design_BOG">
-				<h2>BOG</h2>
-				<h3>Boyfriend of Obligation</h3>
-				<div class="design_character_input">
-					<div class="design_block">
-						<h4>Moral Quality:</h4>
-						<div class="slider">
-							<span class="slider_text_left">Negative</span>
-							<span class="slider_text_right">Positive</span>
-							<div class="slider_body">
-								<input type="hidden" id="slider_moral_BOG" value="0" />
-							</div>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Attractiveness:</h4>
-						<div class="slider">
-							<span class="slider_text_left">Not Attractive</span>
-							<span class="slider_text_right">Attractive</span>
-							<div class="slider_body">
-								<input type="hidden" id="slider_handsome_BOG" value="0" />
-							</div>
-						</div>
-					</div>
-					<div class="line"><div></div></div>
-					<div class="design_block" id="era_block">
-						<h4>Era:</h4>
-						<div class="check_box">
-							<input type="checkbox" id="modern_BOG" value="modern">
-    						<label for="modern_BOG">Modern World</label>	
-						</div>
-						<div class="check_box">
-							<input type="checkbox" id="camelot_BOG" value="camelot">
-    						<label for="camelot_BOG">Camelot</label>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Status/Occupation:</h4>
-						<div class="status_input" id="modern_input_BOG">
-							<select id="status_BOG" placeholder="Click to select">
-								<option value="None"></option>
-								<option value="teacher">Primary School Teacher</option>
-								<option value="waiter">Restaurant Waiter</option>
-								<option value="owner">Shop Owner</option>
-								<option value="clerk">Office Clerk</option>
-								<option value="sale">Retail Salesperson</option>
-								<option value="developer">Software Developer</option>
-								<option value="manager">Financial Manager</option>
-								<option value="coach">Coach</option>
-								<option value="unemployed">Unemployed</option>
-								<option value="politician">Politician</option>
-								<option value="gangster">Gangster</option>
-								<option value="actor">Actor</option> 
-								<option value="rock">Rock Star</option>
-								<option value="fitness">Fitness Instructor</option>
-								<option value="athlete">Athlete</option>
-								<option value="ceo">CEO</option>
-								<option value="artist">Artist</option>
-								<option value="entrepreneur">Entrepreneur</option>
-								<option value="billionaire">Billionaire</option>
-								<option value="free">Freelancer</option>
-								<option value="gangster">Gangster</option>
-							</select>
-						</div>
-						<div class="status_input" id="camelot_input_BOG">
-							<select id="status_camelot_BOG" placeholder="Click to select">
-								<option value="None"></option>
-								<option value="king">King</option>
-								<option value="bastard">Bastard Prince</option>
-								<option value="knight">Knight</option>
-								<option value="squire">Squire</option>
-							</select>
-						</div>
-					</div>
-					<div class="design_block" id="color_block">
-						<h4>Skin Color:</h4>
-						<div class="color_palette">
-							<div id="white_BOG" class="color"></div>
-							<div id="yellow_BOG" class="color"></div>
-							<div id="black_BOG" class="color"></div>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Gender:</h4>
-						<div class="check_box_1">
-							<input type="checkbox" id="female" value="female" disabled>
-    						<label for="female" id="grey_text">Female (to continue)</label>	
-						</div>
-						<div class="check_box_1">
-							<input type="checkbox" id="male" value="male" checked>
-    						<label for="male">Male</label>
-						</div>
-					</div>
-				</div>	
-			</div>
-			<div class="design_BOD">
-				<h2>BOD</h2>
-				<h3>Boyfriend of Desire</h3>
-				<div class="design_character_input">
-					<div class="design_block">
-						<h4>Moral Quality:</h4>
-						<div class="slider">
-							<span class="slider_text_left">Negative</span>
-							<span class="slider_text_right">Positive</span>
-							<div class="slider_body">
-								<input type="hidden" id="slider_moral_BOD" value="0" />
-							</div>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Attractiveness:</h4>
-						<div class="slider">
-							<span class="slider_text_left">Not Attractive</span>
-							<span class="slider_text_right">Attractive</span>
-							<div class="slider_body">
-								<input type="hidden" id="slider_handsome_BOD" value="0" />
-							</div>
-						</div>
-					</div>
-					<div class="line"><div></div></div>
-					<div class="design_block" id="era_block">
-						<h4>Era:</h4>
-						<div class="check_box">
-							<input type="checkbox" id="modern_BOD" value="modern">
-    						<label for="modern_BOD">Modern World</label>	
-						</div>
-						<div class="check_box">
-							<input type="checkbox" id="camelot_BOD" value="camelot">
-    						<label for="camelot_BOD">Camelot</label>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Status/Occupation:</h4>
-						<div class="status_input" id="modern_input_BOD">
-							<select id="status_BOD" placeholder="Click to select">
-								<option value="None"></option>
-								<option value="actor">Actor</option> 
-								<option value="rock">Rock Star</option>
-								<option value="fitness">Fitness Instructor</option>
-								<option value="athlete">Athlete</option>
-								<option value="ceo">CEO</option>
-								<option value="artist">Artist</option>
-								<option value="politician">Politician</option>
-								<option value="entrepreneur">Entrepreneur</option>
-								<option value="billionaire">Billionaire</option>
-								<option value="free">Freelancer</option>
-								<option value="clerk">Office Clerk</option>
-								<option value="gangster">Gangster</option>
-								<option value="teacher">Primary School Teacher</option>
-								<option value="waiter">Restaurant Waiter</option>
-								<option value="owner">Shop Owner</option>
-								<option value="sale">Retail Salesperson</option>
-								<option value="developer">Software Developer</option>
-								<option value="manager">Financial Manager</option>
-								<option value="coach">Coach</option>
-								<option value="unemployed">Unemployed</option>
-							</select>
-						</div>
-						<div class="status_input" id="camelot_input_BOD">
-							<select id="status_camelot_BOD" placeholder="Click to select">
-								<option value="None"></option>
-								<option value="king">King</option>
-								<option value="bastard">Bastard Prince</option>
-								<option value="knight">Knight</option>
-								<option value="squire">Squire</option>
-							</select>
-						</div>
-					</div>
-					<div class="design_block" id="color_block">
-						<h4>Skin Color:</h4>
-						<div class="color_palette">
-							<div id="white_BOD" class="color"></div>
-							<div id="yellow_BOD" class="color"></div>
-							<div id="black_BOD" class="color"></div>
-						</div>
-					</div>
-					<div class="design_block">
-						<h4>Gender:</h4>
-						<div class="check_box_1">
-							<input type="checkbox" id="female" value="female" disabled>
-    						<label for="female" id="grey_text">Female (to continue)</label>	
-						</div>
-						<div class="check_box_1">
-							<input type="checkbox" id="male" value="male" checked>
-    						<label for="male">Male</label>
-						</div>
-					</div>
-				</div>	
-			</div>
-			<div id="step1" class="step">
-				<h1>Step One. Character Design</h1>
-				<p>Use the above options to design two main characters. Character appearance will be generated based on your selection. Click Generate Character button after you finish.</p>
-				<button id="generate_character_button">Generate Character</button>
-			</div>
-		</div>
-		<div id="generate_character">
-			<div id="generate_BOG">
-				<h2>BOG</h2>
-				<div id="generate_BOG_img">
-					<div id="BOG_skin1" class="BOG-skin0"></div>
-					<div id="BOG_skin2" class="BOG-skin1"></div>
-					<div id="BOG_skin3" class="BOG-skin2"></div>
-					<div id="BOG_hair1" class="BOG-hair1"></div>
-					<div id="BOG_hair2" class="BOG-hair0"></div>
-					<div id="cloth0" class="BOG-cloth0"></div>
-					<div id="cloth1" class="BOG-cloth1"></div>
-					<div id="cloth2" class="BOG-cloth2"></div>
-					<div id="cloth3" class="BOG-cloth3"></div>
-					<div id="cloth4_1" class="BOG-cloth4"></div>
-					<div id="cloth5_1" class="BOG-cloth5"></div>
-					<div id="cloth7" class="BOG-cloth7"></div>
-					<div id="hand1" class="BOG-skin0"></div>
-					<div id="hand2" class="BOG-skin1"></div>
-					<div id="hand3" class="BOG-skin2"></div>
-					<div id="cloth6_1" class="BOG-cloth6-0"></div>
-					<div id="cloth6_2" class="BOG-cloth6-1"></div>
-					<div id="cloth6_3" class="BOG-cloth6-2"></div>
-				</div>
-				<div id="generate_BOG_camelot">
-					<img src="./img/character_camelot/BOG_king_white.png" id="BOG_camelot_image">
-				</div>
-			</div>
-			<div id="generate_BOD">
-				<h2>BOD</h2>
-				<div id="generate_BOD_img">
-					<div id="BOD_skin1" class="BOD-skin0"></div>
-					<div id="BOD_skin2" class="BOD-skin1"></div>
-					<div id="BOD_skin3" class="BOD-skin2"></div>
-					<div id="BOD_hair1" class="BOD-hair0"></div>
-					<div id="BOD_hair2" class="BOD-hair1"></div>
-					<div id="cloth0" class="BOD-cloth0"></div>
-					<div id="cloth1" class="BOD-cloth1"></div>
-					<div id="cloth2" class="BOD-cloth2"></div>
-					<div id="cloth3" class="BOD-cloth3"></div>
-					<div id="cloth4" class="BOD-cloth4"></div>
-					<div id="cloth5" class="BOD-cloth5"></div>
-					<div id="cloth7" class="BOD-cloth7"></div>
-					<div id="hand1" class="BOD-skin0"></div>
-					<div id="hand2" class="BOD-skin1"></div>
-					<div id="hand3" class="BOD-skin2"></div>
-					<div id="cloth6_1" class="BOD-cloth6-0"></div>
-					<div id="cloth6_2" class="BOD-cloth6-1"></div>
-					<div id="cloth6_3" class="BOD-cloth6-2"></div>
-				</div>
-				<div id="generate_BOD_camelot">
-					<img src="./img/character_camelot/BOD_knight_yellow.png" id="BOD_camelot_image">
-				</div>
-			</div>
-			<div id="step2" class="step">
-				<h1>Step Two. Confirm Your Character</h1>
-				<p>Congratulations! You have successfully designed the appearance of your characters. Now it's time to add some attributes and personalities to your character. Click Set Attributes button to continue.</p>
-				<button id="confirm_character_button">Set Attributes</button>
-			</div>
-		</div>
-		<div id="design_personality">
-			<div class="design_BOG">
-				<p class="note_text">Based on your setting: Moral quality = <span id="BOG_moral_value">-3</span></p>
-				<h2>BOG</h2>
-				<table id="negative_BOG">
-					<tr>
-						<th>Authority:</th>
-					</tr>
-					<tr>
-						<td class="show_violence">Manipulative</td>
-						<td>Rule-based</td>
-						<td class="hide_violence">Conformist</td>
-						<td class="show_violence">Dictatorial</td>
-						<td class="show_violence">Menacing</td>
-					</tr>
-					<tr>
-						<th>Potency:</th>
-					</tr>
-					<tr>
-						<td>Impotent</td>
-						<td class="hide_violence">Withholding</td>
-						<td class="show_violence">Controlling</td>
-						<td class="show_violence">Despotic</td>
-						<td class="show_violence">Violating</td>
-					</tr>
-					<tr>
-						<th colspan="2">Patriarchal Privilege:</th>
-					</tr>
-					<tr>
-						<td class="show_violence">Exploitative</td>
-						<td class="show_fear_poverty">Snobbish</td>
-						<td class="show_suspicion">Unfaithful</td>
-						<td class="show_violence">Abusive</td>
-						<td class="show_violence">Tyrannical</td>
-					</tr>
-					<tr>
-						<th>Attachment:</th>
-					</tr>
-					<tr>
-						<td>Cloying</td>
-						<td>Cool</td>
-						<td>Objectifying</td>
-						<td>Jealous</td>
-						<td class="show_violence">Sadistic</td>
-					</tr>
-				</table>
-				<table id="positive_BOG">
-					<tr>
-						<th>Authority:</th>
-					</tr>
-					<tr>
-						<td>Communitarian</td>
-						<td>Rational</td>
-						<td>Legal</td>
-						<td>Physical</td>
-						<td>Financial</td>
-					</tr>
-					<tr>
-						<th>Potency in:</th>
-					</tr>
-					<tr>
-						<td>Sexuality</td>
-						<td>Knowledge</td>
-						<td>Legal System</td>
-						<td>Fighting</td>
-						<td>Wealth</td>
-					</tr>
-					<tr>
-						<th>Patriarchal:</th>
-					</tr>
-					<tr>
-						<td>Pacifist</td>
-						<td>Antiegalitarian</td>
-						<td>Punishment</td>
-						<td>Macho Gallantry</td>
-						<td>Sheltering</td>
-					</tr>
-					<tr>
-						<th>Attachment:</th>
-					</tr>
-					<tr>
-						<td>Supportive</td>
-						<td>Encouraging</td>
-						<td>Impersonal</td>
-						<td>Amorous</td>
-						<td>Indulgent</td>
-					</tr>
-				</table>
-			</div>
-			<div class="design_BOD">
-				<p class="note_text">Based on your setting: Moral quality = <span id="BOD_moral_value">-3</span></p>
-				<h2>BOD</h2>
-				<table id="negative_BOD">
-					<tr>
-						<th>Authority:</th>
-					</tr>
-					<tr>
-						<td class="show_violence">Manipulative</td>
-						<td>Rule-based</td>
-						<td>Conformist</td>
-						<td class="show_violence">Dictatorial</td>
-						<td class="show_violence">Menacing</td>
-					</tr>
-					<tr>
-						<th>Potency:</th>
-					</tr>
-					<tr>
-						<td>Impotent</td>
-						<td>Withholding</td>
-						<td>Controlling</td>
-						<td>Despotic</td>
-						<td class="show_violence">Violating</td>
-					</tr>
-					<tr>
-						<th colspan="2">Patriarchal Privilege:</th>
-					</tr>
-					<tr>
-						<td>Exploitative</td>
-						<td class="show_fear_poverty">Snobbish</td>
-						<td>Unfaithful</td>
-						<td>Abusive</td>
-						<td>Tyrannical</td>
-					</tr>
-					<tr>
-						<th>Attachment:</th>
-					</tr>
-					<tr>
-						<td>Cloying</td>
-						<td>Cool</td>
-						<td>Objectifying</td>
-						<td>Jealous</td>
-						<td class="show_violence">Sadistic</td>
-					</tr>
-				</table>
-				<table id="positive_BOD">
-					<tr>
-						<th>Authority:</th>
-					</tr>
-					<tr>
-						<td>Communitarian</td>
-						<td>Rational</td>
-						<td>Legal</td>
-						<td class="show_rescue">Physical</td>
-						<td class="show_temptation_wealth">Financial</td>
-					</tr>
-					<tr>
-						<th>Potency in:</th>
-					</tr>
-					<tr>
-						<td class="show_seduction" class="show_temptation">Sexuality</td>
-						<td class="show_temptation">Knowledge</td>
-						<td class="show_temptation">Legal System</td>
-						<td class="show_temptation">Fighting</td>
-						<td class="show_temptation_wealth">Wealth</td>
-					</tr>
-					<tr>
-						<th>Patriarchal:</th>
-					</tr>
-					<tr>
-						<td class="show_rescue">Pacifist</td>
-						<td>Egalitarian</td>
-						<td class="show_rescue">Punishment</td>
-						<td class="show_rescue">Macho Gallantry</td>
-						<td class="show_rescue">Sheltering</td>
-					</tr>
-					<tr>
-						<th>Attachment:</th>
-					</tr>
-					<tr>
-						<td class="show_rescue">Supportive</td>
-						<td>Encouraging</td>
-						<td>Impersonal</td>
-						<td class="show_seduction" class="show_temptation">Amorous</td>
-						<td>Indulgent</td>
-					</tr>
-				</table>
-			</div>
-			<div id="step3" class="step">
-				<h1>Step Three. Choose Character Attributes</h1>
-				<p>Click to choose attributes from multiple columns for BOG and BOD, such as a comformist who is unfaithful but highly jealous. Story cards will be generated based on the attributes assigned to each character. Click Generate Story Cards button after you finish.</p>
-				<button id="generate_cards_button">Generate Story Cards</button>
-			</div>
-		</div>
-		<div id="generate_cards">
-			<p class="note_text">The story cards below are generated from the character attributes you defined at the Step three.</p>
-			<div id="drag_morphemes">
-				<h2>Proppian Morphemes</h2>
-				<div class="drag_box">
-					<h4>Openning Situation</h4>
-					<div id="opening">
-						<p>Click to choose story card for this section</p>
-					</div>
-				</div>
-				<div class="drag_box">
-					<h4>Disruption</h4>
-					<div id="disruption">
-						<p>Click to choose story card for this section</p>
-					</div>
-				</div>
-				<div class="drag_box">
-					<h4>Crisis / Constraint</h4>
-					<div id="crisis">
-						<p>Click to choose story card for this section</p>
-					</div>
-				</div>
-				<div class="drag_box">
-					<h4>Choices</h4>
-					<div id="choice">
-						<p>Click to choose story card for this section</p>
-					</div>
-				</div>
-				<div class="drag_box">
-					<h4>Consequences</h4>
-					<div id="consequence">
-						<p>Click to choose story card for this section</p>
-					</div>
-				</div>
-			</div>
-			<div id="display_card">
-				<div class="card_drag" id="temptation">
-					<h4>Temptation</h4>
-					<div class="card_modern">
-						<img src="./img/card/temptation_0.png" class="BOD-skin0">
-						<img src="./img/card/temptation_1.png" class="BOD-skin1">
-						<img src="./img/card/temptation_2.png" class="BOD-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/temptation_camelot_0.png" class="BOD-skin0">
-						<img src="./img/card/temptation_camelot_1.png" class="BOD-skin1">
-						<img src="./img/card/temptation_camelot_2.png" class="BOD-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="BODproposal">
-					<h4>BOD Proposal</h4>
-					<div class="card_modern">
-						<img src="./img/card/BODproposal_0.png" class="BOD-skin0">
-						<img src="./img/card/BODproposal_1.png" class="BOD-skin1">
-						<img src="./img/card/BODproposal_2.png" class="BOD-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/proposal_camelot.png">
-					</div>
-				</div>
-				<div class="card_drag" id="BOGproposal">
-					<h4>BOG Proposal</h4>
-					<div class="card_modern">
-						<img src="./img/card/BOGproposal_0.png" class="BOG-skin0">
-						<img src="./img/card/BOGproposal_1.png" class="BOG-skin1">
-						<img src="./img/card/BOGproposal_2.png" class="BOG-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/proposal_camelot.png">
-					</div>
-				</div>
-				<div class="card_drag" id="love_first">
-					<h4>Love at First Sight</h4>
-					<p>BOG's Addictiveness>0</p>
-					<div class="card_modern">
-						<img src="./img/card/love_first_0.png" class="BOD-skin0">
-						<img src="./img/card/love_first_1.png" class="BOD-skin1">
-						<img src="./img/card/love_first_2.png" class="BOD-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/love_first_camelot_0.png" class="BOD-skin0">
-						<img src="./img/card/love_first_camelot_1.png" class="BOD-skin1">
-						<img src="./img/card/love_first_camelot_2.png" class="BOD-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="rescue">
-					<h4>Rescue</h4>
-					<p>From Rescuing Attr. of BOD/G</p>
-					<img src="./img/card/rescue_0.png" class="BOD-skin0">
-					<img src="./img/card/rescue_1.png" class="BOD-skin1">
-					<img src="./img/card/rescue_2.png" class="BOD-skin2">
-				</div>
-				<div class="card_drag" id="break">
-					<h4>Break Up</h4>
-					<div class="card_modern">
-						<img src="./img/card/break_0.png" class="BOG-skin0">
-						<img src="./img/card/break_1.png" class="BOG-skin1">
-						<img src="./img/card/break_2.png" class="BOG-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/break_camelot_0.png" class="BOG-skin0">
-						<img src="./img/card/break_camelot_1.png" class="BOG-skin1">
-						<img src="./img/card/break_camelot_2.png" class="BOG-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="seduction">
-					<h4>Seduction</h4>
-					<p>From Sexuality Attr. of BOG</p>
-					<img src="./img/card/seduction_0.png" class="BOD-skin0">
-					<img src="./img/card/seduction_1.png" class="BOD-skin1">
-					<img src="./img/card/seduction_2.png" class="BOD-skin2">
-				</div>
-				<div class="card_drag" id="BODhappy">
-					<h4>Happy with BOD</h4>
-					<div class="card_modern">
-						<img src="./img/card/BODhappy_0.png" class="BOD-skin0">
-						<img src="./img/card/BODhappy_1.png" class="BOD-skin1">
-						<img src="./img/card/BODhappy_2.png" class="BOD-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/BODhappy_camelot_0.png" class="BOD-skin0">
-						<img src="./img/card/BODhappy_camelot_1.png" class="BOD-skin1">
-						<img src="./img/card/BODhappy_camelot_2.png" class="BOD-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="BOGhappy">
-					<h4>Happy with BOG</h4>
-					<div class="card_modern">
-						<img src="./img/card/BOGhappy_0.png" class="BOG-skin0">
-						<img src="./img/card/BOGhappy_1.png" class="BOG-skin1">
-						<img src="./img/card/BOGhappy_2.png" class="BOG-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/BOGhappy_camelot_0.png" class="BOG-skin0">
-						<img src="./img/card/BOGhappy_camelot_1.png" class="BOG-skin1">
-						<img src="./img/card/BOGhappy_camelot_2.png" class="BOG-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="suspicion">
-					<h4>Suspicion of BOG</h4>
-					<p>From Attr. Unfaithful</p>
-					<div class="card_modern">
-						<img src="./img/card/suspicion_0.png" class="BOG-skin0">
-						<img src="./img/card/suspicion_1.png" class="BOG-skin1">
-						<img src="./img/card/suspicion_2.png" class="BOG-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/suspicion_camelot_0.png" class="BOG-skin0">
-						<img src="./img/card/suspicion_camelot_1.png" class="BOG-skin1">
-						<img src="./img/card/suspicion_camelot_2.png" class="BOG-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="BOGquarrel">
-					<h4>Quarrel with BOG</h4>
-					<div class="card_modern">
-						<img src="./img/card/BOGquarrel_0.png" class="BOG-skin0">
-						<img src="./img/card/BOGquarrel_1.png" class="BOG-skin1">
-						<img src="./img/card/BOGquarrel_2.png" class="BOG-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/BOGquarrel_camelot_0.png" class="BOG-skin0">
-						<img src="./img/card/BOGquarrel_camelot_1.png" class="BOG-skin1">
-						<img src="./img/card/BOGquarrel_camelot_2.png" class="BOG-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="BOGquarrel">
-					<h4>Quarrel with BOD</h4>
-					<div class="card_modern">
-						<img src="./img/card/BODquarrel_0.png" class="BOD-skin0">
-						<img src="./img/card/BODquarrel_1.png" class="BOD-skin1">
-						<img src="./img/card/BODquarrel_2.png" class="BOD-skin2">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/BODquarrel_camelot_0.png" class="BOD-skin0">
-						<img src="./img/card/BODquarrel_camelot_1.png" class="BOD-skin1">
-						<img src="./img/card/BODquarrel_camelot_2.png" class="BOD-skin2">
-					</div>
-				</div>
-				<div class="card_drag" id="moral">
-					<h4>Moral Choice</h4>
-					<img src="./img/card/moral.png">
-				</div>
-				<div class="card_drag" id="happy_alone">
-					<h4>Happy Alone</h4>
-					<p>Moral Quality of BOG/D is negative</p>
-					<img src="./img/card/happy_alone.png">
-				</div>
-				<div class="card_drag" id="alone">
-					<h4>Alone</h4>
-					<img src="./img/card/alone.png">
-				</div>
-				<div class="card_drag" id="fearBOG">
-					<p>From Violent Attr. of BOG</p>
-					<h4>Fear</h4>
-					<img src="./img/card/fearBOG.png">
-				</div>
-				<div class="card_drag" id="threat">
-					<h4>Threat</h4>
-					<p>From Violent Attr. of BOG</p>
-					<img src="./img/card/threat.png">
-				</div>
-				<div class="card_drag" id="revenge">
-					<h4>Revenge</h4>
-					<p>From Violent Attr. of BOG</p>
-					<img src="./img/card/revenge.png">
-				</div>
-				<div class="card_drag" id="fear_poverty">
-					<h4>Fear of Poverty</h4>
-					<p>From Attr. Snobbish</p>
-					<div class="card_modern">
-						<img src="./img/card/fear_poverty.png">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/fear_poverty_camelot.png">
-					</div>
-				</div>
-				<div class="card_drag" id="temptation_wealth">
-					<h4>Tempt. by Wealth</h4>
-					<p>From Financial Attr. of BOG/D</p>
-					<div class="card_modern">
-						<img src="./img/card/temptation_wealth.png">
-					</div>
-					<div class="card_camelot">
-						<img src="./img/card/temptation_wealth_camelot.png">
-					</div>
-				</div>
-				<div class="card_drag" id="violence">
-					<h4>Violence</h4>
-					<p>From Violent Attr. of BOG/D</p>
-					<img src="./img/card/violence.png">
-				</div>
-				<div class="card_drag" id="battle">
-					<h4>Battle</h4>
-					<img src="./img/card/battle.png">
-				</div>
-
-			</div>
-			<div id="step4" class="step">
-				<h1>Step Four. Create Five Part Structure for Your Story</h1>
-				<p>Click the story cards to fill your five part structure. Click the button Done after you finish.</p>
-				<button id="button_done">Done</button>
-			</div>
-		</div>
-		<div id="final_board">
-			<div class="info_B">
-				<div id="generate_BOG_modern_small">
-					<div id="BOG_skin1" class="BOG-skin0"></div>
-					<div id="BOG_skin2" class="BOG-skin1"></div>
-					<div id="BOG_skin3" class="BOG-skin2"></div>
-					<div id="BOG_hair1" class="BOG-hair1"></div>
-					<div id="BOG_hair2" class="BOG-hair0"></div>
-					<div id="cloth0" class="BOG-cloth0"></div>
-					<div id="cloth1" class="BOG-cloth1"></div>
-					<div id="cloth2" class="BOG-cloth2"></div>
-					<div id="cloth3" class="BOG-cloth3"></div>
-					<div id="cloth4_1" class="BOG-cloth4"></div>
-					<div id="cloth5_1" class="BOG-cloth5"></div>
-					<div id="cloth7" class="BOG-cloth7"></div>
-					<div id="hand1" class="BOG-skin0"></div>
-					<div id="hand2" class="BOG-skin1"></div>
-					<div id="hand3" class="BOG-skin2"></div>
-					<div id="cloth6_1" class="BOG-cloth6-0"></div>
-					<div id="cloth6_2" class="BOG-cloth6-1"></div>
-					<div id="cloth6_3" class="BOG-cloth6-2"></div>
-				</div>
-				<div id="generate_BOG_camelot_small">
-					<img src="./img/character_camelot/BOG_king_white.png" id="BOG_camelot_image">
-				</div>
-				<div class="summary">
-					<h2>BOG</h2>
-					<p>Moral Quality: <span id="value_moral_BOG">-5</span></p>
-					<p>Attractiveness: <span id="value_attract_BOG">-5</span></p>
-					<p>Occupation: <span id="value_status_BOG">teacher</span></p>
-					<p>Attributes:<span id="value_attr_BOG">snobbish</span></p>
-					<p><span id="value_attr_BOG_2"></span></p>
-				</div>
-			</div>
-			<div class="info_B">
-				<div id="generate_BOD_modern_small">
-					<div id="BOD_skin1" class="BOD-skin0"></div>
-					<div id="BOD_skin2" class="BOD-skin1"></div>
-					<div id="BOD_skin3" class="BOD-skin2"></div>
-					<div id="BOD_hair1" class="BOD-hair0"></div>
-					<div id="BOD_hair2" class="BOD-hair1"></div>
-					<div id="cloth0" class="BOD-cloth0"></div>
-					<div id="cloth1" class="BOD-cloth1"></div>
-					<div id="cloth2" class="BOD-cloth2"></div>
-					<div id="cloth3" class="BOD-cloth3"></div>
-					<div id="cloth4" class="BOD-cloth4"></div>
-					<div id="cloth5" class="BOD-cloth5"></div>
-					<div id="cloth7" class="BOD-cloth7"></div>
-					<div id="hand1" class="BOD-skin0"></div>
-					<div id="hand2" class="BOD-skin1"></div>
-					<div id="hand3" class="BOD-skin2"></div>
-					<div id="cloth6_1" class="BOD-cloth6-0"></div>
-					<div id="cloth6_2" class="BOD-cloth6-1"></div>
-					<div id="cloth6_3" class="BOD-cloth6-2"></div>
-				</div>
-				<div id="generate_BOD_camelot_small">
-					<img src="./img/character_camelot/BOD_knight_yellow.png" id="BOD_camelot_image">
-				</div>
-				<div class="summary">
-					<h2>BOD</h2>
-					<p>Moral Quality: <span id="value_moral_BOD">-5<span></p>
+    <header></header>
+    <div>
+        <!--Front page-->
+        <div id="homepage">
+            <img id="title_image" src="./img/title.png">
+            <h2>Tale of Two Boyfriends</h2>
+            <p>This website provides a story pattern to help you create interactive narrative with dramatically meaningful varations for the interactor to explore.The story pattern is based on Janet H. Murray's W2P pattern which privileges the female position by evaluating the male figures as potential choices and divides male characters into Boyfriends of ObliGation (BOGs) and Boyfriends of Desire (BODs). On this website, you will be guilded to define two male characters as BOG and BOD. After that, character figures and possible plot cards will be generated to help you design your storyworld.</p>
+            <a href="">Read Janet H. Murray's article “A Tale of Two Boyfriends”</a>
+            <button id="create_story">Create a T2B story</button>
+        </div>
+        <!--Step 1 Design character-->
+        <div id="design_character">
+            <div class="design_BOG">
+                <h2>BOG</h2>
+                <h3>Boyfriend of Obligation</h3>
+                <div class="design_character_input">
+                    <div class="design_block">
+                        <h4>Moral Quality:</h4>
+                        <div class="slider">
+                            <span class="slider_text_left">Negative</span>
+                            <span class="slider_text_right">Positive</span>
+                            <div class="slider_body">
+                                <input type="hidden" id="slider_moral_BOG" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Attractiveness:</h4>
+                        <div class="slider">
+                            <span class="slider_text_left">Not Attractive</span>
+                            <span class="slider_text_right">Attractive</span>
+                            <div class="slider_body">
+                                <input type="hidden" id="slider_handsome_BOG" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div></div>
+                    </div>
+                    <div class="design_block" id="era_block">
+                        <h4>Era:</h4>
+                        <div class="check_box">
+                            <input type="checkbox" id="modern_BOG" value="modern">
+                            <label for="modern_BOG">Modern World</label>
+                        </div>
+                        <div class="check_box">
+                            <input type="checkbox" id="camelot_BOG" value="camelot">
+                            <label for="camelot_BOG">Camelot</label>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Status/Occupation:</h4>
+                        <div class="status_input" id="modern_input_BOG">
+                            <select id="status_BOG" placeholder="Click to select">
+                                <option value="None"></option>
+                                <option value="teacher">Primary School Teacher</option>
+                                <option value="waiter">Restaurant Waiter</option>
+                                <option value="owner">Shop Owner</option>
+                                <option value="clerk">Office Clerk</option>
+                                <option value="sale">Retail Salesperson</option>
+                                <option value="developer">Software Developer</option>
+                                <option value="manager">Financial Manager</option>
+                                <option value="coach">Coach</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="politician">Politician</option>
+                                <option value="gangster">Gangster</option>
+                                <option value="actor">Actor</option>
+                                <option value="rock">Rock Star</option>
+                                <option value="fitness">Fitness Instructor</option>
+                                <option value="athlete">Athlete</option>
+                                <option value="ceo">CEO</option>
+                                <option value="artist">Artist</option>
+                                <option value="entrepreneur">Entrepreneur</option>
+                                <option value="billionaire">Billionaire</option>
+                                <option value="free">Freelancer</option>
+                                <option value="gangster">Gangster</option>
+                            </select>
+                        </div>
+                        <div class="status_input" id="camelot_input_BOG">
+                            <select id="status_camelot_BOG" placeholder="Click to select">
+                                <option value="None"></option>
+                                <option value="king">King</option>
+                                <option value="bastard">Bastard Prince</option>
+                                <option value="knight">Knight</option>
+                                <option value="squire">Squire</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="design_block" id="color_block">
+                        <h4>Skin Color:</h4>
+                        <div class="color_palette">
+                            <div id="white_BOG" class="color"></div>
+                            <div id="yellow_BOG" class="color"></div>
+                            <div id="black_BOG" class="color"></div>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Gender:</h4>
+                        <div class="check_box_1">
+                            <input type="checkbox" id="female" value="female" disabled>
+                            <label for="female" id="grey_text">Female (to continue)</label>
+                        </div>
+                        <div class="check_box_1">
+                            <input type="checkbox" id="male" value="male" checked>
+                            <label for="male">Male</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_BOD">
+                <h2>BOD</h2>
+                <h3>Boyfriend of Desire</h3>
+                <div class="design_character_input">
+                    <div class="design_block">
+                        <h4>Moral Quality:</h4>
+                        <div class="slider">
+                            <span class="slider_text_left">Negative</span>
+                            <span class="slider_text_right">Positive</span>
+                            <div class="slider_body">
+                                <input type="hidden" id="slider_moral_BOD" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Attractiveness:</h4>
+                        <div class="slider">
+                            <span class="slider_text_left">Not Attractive</span>
+                            <span class="slider_text_right">Attractive</span>
+                            <div class="slider_body">
+                                <input type="hidden" id="slider_handsome_BOD" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div></div>
+                    </div>
+                    <div class="design_block" id="era_block">
+                        <h4>Era:</h4>
+                        <div class="check_box">
+                            <input type="checkbox" id="modern_BOD" value="modern">
+                            <label for="modern_BOD">Modern World</label>
+                        </div>
+                        <div class="check_box">
+                            <input type="checkbox" id="camelot_BOD" value="camelot">
+                            <label for="camelot_BOD">Camelot</label>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Status/Occupation:</h4>
+                        <div class="status_input" id="modern_input_BOD">
+                            <select id="status_BOD" placeholder="Click to select">
+                                <option value="None"></option>
+                                <option value="actor">Actor</option>
+                                <option value="rock">Rock Star</option>
+                                <option value="fitness">Fitness Instructor</option>
+                                <option value="athlete">Athlete</option>
+                                <option value="ceo">CEO</option>
+                                <option value="artist">Artist</option>
+                                <option value="politician">Politician</option>
+                                <option value="entrepreneur">Entrepreneur</option>
+                                <option value="billionaire">Billionaire</option>
+                                <option value="free">Freelancer</option>
+                                <option value="clerk">Office Clerk</option>
+                                <option value="gangster">Gangster</option>
+                                <option value="teacher">Primary School Teacher</option>
+                                <option value="waiter">Restaurant Waiter</option>
+                                <option value="owner">Shop Owner</option>
+                                <option value="sale">Retail Salesperson</option>
+                                <option value="developer">Software Developer</option>
+                                <option value="manager">Financial Manager</option>
+                                <option value="coach">Coach</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="status_input" id="camelot_input_BOD">
+                            <select id="status_camelot_BOD" placeholder="Click to select">
+                                <option value="None"></option>
+                                <option value="king">King</option>
+                                <option value="bastard">Bastard Prince</option>
+                                <option value="knight">Knight</option>
+                                <option value="squire">Squire</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="design_block" id="color_block">
+                        <h4>Skin Color:</h4>
+                        <div class="color_palette">
+                            <div id="white_BOD" class="color"></div>
+                            <div id="yellow_BOD" class="color"></div>
+                            <div id="black_BOD" class="color"></div>
+                        </div>
+                    </div>
+                    <div class="design_block">
+                        <h4>Gender:</h4>
+                        <div class="check_box_1">
+                            <input type="checkbox" id="female" value="female" disabled>
+                            <label for="female" id="grey_text">Female (to continue)</label>
+                        </div>
+                        <div class="check_box_1">
+                            <input type="checkbox" id="male" value="male" checked>
+                            <label for="male">Male</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="step1" class="step">
+                <h1>Step One. Character Design</h1>
+                <p>Use the above options to design two main characters. Character appearance will be generated based on your selection. Click Generate Character button after you finish.</p>
+                <button id="generate_character_button">Generate Character</button>
+            </div>
+        </div>
+        <div id="generate_character">
+            <div id="generate_BOG">
+                <h2>BOG</h2>
+                <div id="generate_BOG_img">
+                    <div id="BOG_skin1" class="BOG-skin0"></div>
+                    <div id="BOG_skin2" class="BOG-skin1"></div>
+                    <div id="BOG_skin3" class="BOG-skin2"></div>
+                    <div id="BOG_hair1" class="BOG-hair1"></div>
+                    <div id="BOG_hair2" class="BOG-hair0"></div>
+                    <div id="cloth0" class="BOG-cloth0"></div>
+                    <div id="cloth1" class="BOG-cloth1"></div>
+                    <div id="cloth2" class="BOG-cloth2"></div>
+                    <div id="cloth3" class="BOG-cloth3"></div>
+                    <div id="cloth4_1" class="BOG-cloth4"></div>
+                    <div id="cloth5_1" class="BOG-cloth5"></div>
+                    <div id="cloth7" class="BOG-cloth7"></div>
+                    <div id="hand1" class="BOG-skin0"></div>
+                    <div id="hand2" class="BOG-skin1"></div>
+                    <div id="hand3" class="BOG-skin2"></div>
+                    <div id="cloth6_1" class="BOG-cloth6-0"></div>
+                    <div id="cloth6_2" class="BOG-cloth6-1"></div>
+                    <div id="cloth6_3" class="BOG-cloth6-2"></div>
+                </div>
+                <div id="generate_BOG_camelot">
+                    <img src="./img/character_camelot/BOG_king_white.png" id="BOG_camelot_image">
+                </div>
+            </div>
+            <div id="generate_BOD">
+                <h2>BOD</h2>
+                <div id="generate_BOD_img">
+                    <div id="BOD_skin1" class="BOD-skin0"></div>
+                    <div id="BOD_skin2" class="BOD-skin1"></div>
+                    <div id="BOD_skin3" class="BOD-skin2"></div>
+                    <div id="BOD_hair1" class="BOD-hair0"></div>
+                    <div id="BOD_hair2" class="BOD-hair1"></div>
+                    <div id="cloth0" class="BOD-cloth0"></div>
+                    <div id="cloth1" class="BOD-cloth1"></div>
+                    <div id="cloth2" class="BOD-cloth2"></div>
+                    <div id="cloth3" class="BOD-cloth3"></div>
+                    <div id="cloth4" class="BOD-cloth4"></div>
+                    <div id="cloth5" class="BOD-cloth5"></div>
+                    <div id="cloth7" class="BOD-cloth7"></div>
+                    <div id="hand1" class="BOD-skin0"></div>
+                    <div id="hand2" class="BOD-skin1"></div>
+                    <div id="hand3" class="BOD-skin2"></div>
+                    <div id="cloth6_1" class="BOD-cloth6-0"></div>
+                    <div id="cloth6_2" class="BOD-cloth6-1"></div>
+                    <div id="cloth6_3" class="BOD-cloth6-2"></div>
+                </div>
+                <div id="generate_BOD_camelot">
+                    <img src="./img/character_camelot/BOD_knight_yellow.png" id="BOD_camelot_image">
+                </div>
+            </div>
+            <div id="step2" class="step">
+                <h1>Step Two. Confirm Your Character</h1>
+                <p>Congratulations! You have successfully designed the appearance of your characters. Now it's time to add some attributes and personalities to your character. Click Set Attributes button to continue.</p>
+                <button id="confirm_character_button">Set Attributes</button>
+            </div>
+        </div>
+        <div id="design_personality">
+            <div class="design_BOG">
+                <p class="note_text">Based on your setting: Moral quality = <span id="BOG_moral_value">-3</span></p>
+                <h2>BOG</h2>
+                <table id="negative_BOG">
+                    <tr>
+                        <th>Authority:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_violence">Manipulative</td>
+                        <td>Rule-based</td>
+                        <td class="hide_violence">Conformist</td>
+                        <td class="show_violence">Dictatorial</td>
+                        <td class="show_violence">Menacing</td>
+                    </tr>
+                    <tr>
+                        <th>Potency:</th>
+                    </tr>
+                    <tr>
+                        <td>Impotent</td>
+                        <td class="hide_violence">Withholding</td>
+                        <td class="show_violence">Controlling</td>
+                        <td class="show_violence">Despotic</td>
+                        <td class="show_violence">Violating</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Patriarchal Privilege:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_violence">Exploitative</td>
+                        <td class="show_fear_poverty">Snobbish</td>
+                        <td class="show_suspicion">Unfaithful</td>
+                        <td class="show_violence">Abusive</td>
+                        <td class="show_violence">Tyrannical</td>
+                    </tr>
+                    <tr>
+                        <th>Attachment:</th>
+                    </tr>
+                    <tr>
+                        <td>Cloying</td>
+                        <td>Cool</td>
+                        <td>Objectifying</td>
+                        <td>Jealous</td>
+                        <td class="show_violence">Sadistic</td>
+                    </tr>
+                </table>
+                <table id="positive_BOG">
+                    <tr>
+                        <th>Authority:</th>
+                    </tr>
+                    <tr>
+                        <td>Communitarian</td>
+                        <td>Rational</td>
+                        <td>Legal</td>
+                        <td>Physical</td>
+                        <td>Financial</td>
+                    </tr>
+                    <tr>
+                        <th>Potency in:</th>
+                    </tr>
+                    <tr>
+                        <td>Sexuality</td>
+                        <td>Knowledge</td>
+                        <td>Legal System</td>
+                        <td>Fighting</td>
+                        <td>Wealth</td>
+                    </tr>
+                    <tr>
+                        <th>Patriarchal:</th>
+                    </tr>
+                    <tr>
+                        <td>Pacifist</td>
+                        <td>Antiegalitarian</td>
+                        <td>Punishment</td>
+                        <td>Macho Gallantry</td>
+                        <td>Sheltering</td>
+                    </tr>
+                    <tr>
+                        <th>Attachment:</th>
+                    </tr>
+                    <tr>
+                        <td>Supportive</td>
+                        <td>Encouraging</td>
+                        <td>Impersonal</td>
+                        <td>Amorous</td>
+                        <td>Indulgent</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="design_BOD">
+                <p class="note_text">Based on your setting: Moral quality = <span id="BOD_moral_value">-3</span></p>
+                <h2>BOD</h2>
+                <table id="negative_BOD">
+                    <tr>
+                        <th>Authority:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_violence">Manipulative</td>
+                        <td>Rule-based</td>
+                        <td>Conformist</td>
+                        <td class="show_violence">Dictatorial</td>
+                        <td class="show_violence">Menacing</td>
+                    </tr>
+                    <tr>
+                        <th>Potency:</th>
+                    </tr>
+                    <tr>
+                        <td>Impotent</td>
+                        <td>Withholding</td>
+                        <td>Controlling</td>
+                        <td>Despotic</td>
+                        <td class="show_violence">Violating</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Patriarchal Privilege:</th>
+                    </tr>
+                    <tr>
+                        <td>Exploitative</td>
+                        <td class="show_fear_poverty">Snobbish</td>
+                        <td>Unfaithful</td>
+                        <td>Abusive</td>
+                        <td>Tyrannical</td>
+                    </tr>
+                    <tr>
+                        <th>Attachment:</th>
+                    </tr>
+                    <tr>
+                        <td>Cloying</td>
+                        <td>Cool</td>
+                        <td>Objectifying</td>
+                        <td>Jealous</td>
+                        <td class="show_violence">Sadistic</td>
+                    </tr>
+                </table>
+                <table id="positive_BOD">
+                    <tr>
+                        <th>Authority:</th>
+                    </tr>
+                    <tr>
+                        <td>Communitarian</td>
+                        <td>Rational</td>
+                        <td>Legal</td>
+                        <td class="show_rescue">Physical</td>
+                        <td class="show_temptation_wealth">Financial</td>
+                    </tr>
+                    <tr>
+                        <th>Potency in:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_seduction" class="show_temptation">Sexuality</td>
+                        <td class="show_temptation">Knowledge</td>
+                        <td class="show_temptation">Legal System</td>
+                        <td class="show_temptation">Fighting</td>
+                        <td class="show_temptation_wealth">Wealth</td>
+                    </tr>
+                    <tr>
+                        <th>Patriarchal:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_rescue">Pacifist</td>
+                        <td>Egalitarian</td>
+                        <td class="show_rescue">Punishment</td>
+                        <td class="show_rescue">Macho Gallantry</td>
+                        <td class="show_rescue">Sheltering</td>
+                    </tr>
+                    <tr>
+                        <th>Attachment:</th>
+                    </tr>
+                    <tr>
+                        <td class="show_rescue">Supportive</td>
+                        <td>Encouraging</td>
+                        <td>Impersonal</td>
+                        <td class="show_seduction" class="show_temptation">Amorous</td>
+                        <td>Indulgent</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="step3" class="step">
+                <h1>Step Three. Choose Character Attributes</h1>
+                <p>Click to choose attributes from multiple columns for BOG and BOD, such as a comformist who is unfaithful but highly jealous. Story cards will be generated based on the attributes assigned to each character. Click Generate Story Cards button after you finish.</p>
+                <button id="generate_cards_button">Generate Story Cards</button>
+            </div>
+        </div>
+        <div id="generate_cards">
+            <p class="note_text">The story cards below are generated from the character attributes you defined at the Step three.</p>
+            <div id="drag_morphemes">
+                <h2>Proppian Morphemes</h2>
+                <div class="drag_box">
+                    <h4>Openning Situation</h4>
+                    <div id="opening">
+                        <p>Click to choose story card for this section</p>
+                    </div>
+                </div>
+                <div class="drag_box">
+                    <h4>Disruption</h4>
+                    <div id="disruption">
+                        <p>Click to choose story card for this section</p>
+                    </div>
+                </div>
+                <div class="drag_box">
+                    <h4>Crisis / Constraint</h4>
+                    <div id="crisis">
+                        <p>Click to choose story card for this section</p>
+                    </div>
+                </div>
+                <div class="drag_box">
+                    <h4>Choices</h4>
+                    <div id="choice">
+                        <p>Click to choose story card for this section</p>
+                    </div>
+                </div>
+                <div class="drag_box">
+                    <h4>Consequences</h4>
+                    <div id="consequence">
+                        <p>Click to choose story card for this section</p>
+                    </div>
+                </div>
+            </div>
+            <div id="display_card">
+                <div class="card_drag" id="temptation">
+                    <h4>Temptation</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/temptation_0.png" class="BOD-skin0">
+                        <img src="./img/card/temptation_1.png" class="BOD-skin1">
+                        <img src="./img/card/temptation_2.png" class="BOD-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/temptation_camelot_0.png" class="BOD-skin0">
+                        <img src="./img/card/temptation_camelot_1.png" class="BOD-skin1">
+                        <img src="./img/card/temptation_camelot_2.png" class="BOD-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="BODproposal">
+                    <h4>BOD Proposal</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BODproposal_0.png" class="BOD-skin0">
+                        <img src="./img/card/BODproposal_1.png" class="BOD-skin1">
+                        <img src="./img/card/BODproposal_2.png" class="BOD-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/proposal_camelot.png">
+                    </div>
+                </div>
+                <div class="card_drag" id="BOGproposal">
+                    <h4>BOG Proposal</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BOGproposal_0.png" class="BOG-skin0">
+                        <img src="./img/card/BOGproposal_1.png" class="BOG-skin1">
+                        <img src="./img/card/BOGproposal_2.png" class="BOG-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/proposal_camelot.png">
+                    </div>
+                </div>
+                <div class="card_drag" id="love_first">
+                    <h4>Love at First Sight</h4>
+                    <p>BOG's Addictiveness>0</p>
+                    <div class="card_modern">
+                        <img src="./img/card/love_first_0.png" class="BOD-skin0">
+                        <img src="./img/card/love_first_1.png" class="BOD-skin1">
+                        <img src="./img/card/love_first_2.png" class="BOD-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/love_first_camelot_0.png" class="BOD-skin0">
+                        <img src="./img/card/love_first_camelot_1.png" class="BOD-skin1">
+                        <img src="./img/card/love_first_camelot_2.png" class="BOD-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="rescue">
+                    <h4>Rescue</h4>
+                    <p>From Rescuing Attr. of BOD/G</p>
+                    <img src="./img/card/rescue_0.png" class="BOD-skin0">
+                    <img src="./img/card/rescue_1.png" class="BOD-skin1">
+                    <img src="./img/card/rescue_2.png" class="BOD-skin2">
+                </div>
+                <div class="card_drag" id="break">
+                    <h4>Break Up</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/break_0.png" class="BOG-skin0">
+                        <img src="./img/card/break_1.png" class="BOG-skin1">
+                        <img src="./img/card/break_2.png" class="BOG-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/break_camelot_0.png" class="BOG-skin0">
+                        <img src="./img/card/break_camelot_1.png" class="BOG-skin1">
+                        <img src="./img/card/break_camelot_2.png" class="BOG-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="seduction">
+                    <h4>Seduction</h4>
+                    <p>From Sexuality Attr. of BOG</p>
+                    <img src="./img/card/seduction_0.png" class="BOD-skin0">
+                    <img src="./img/card/seduction_1.png" class="BOD-skin1">
+                    <img src="./img/card/seduction_2.png" class="BOD-skin2">
+                </div>
+                <div class="card_drag" id="BODhappy">
+                    <h4>Happy with BOD</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BODhappy_0.png" class="BOD-skin0">
+                        <img src="./img/card/BODhappy_1.png" class="BOD-skin1">
+                        <img src="./img/card/BODhappy_2.png" class="BOD-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/BODhappy_camelot_0.png" class="BOD-skin0">
+                        <img src="./img/card/BODhappy_camelot_1.png" class="BOD-skin1">
+                        <img src="./img/card/BODhappy_camelot_2.png" class="BOD-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="BOGhappy">
+                    <h4>Happy with BOG</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BOGhappy_0.png" class="BOG-skin0">
+                        <img src="./img/card/BOGhappy_1.png" class="BOG-skin1">
+                        <img src="./img/card/BOGhappy_2.png" class="BOG-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/BOGhappy_camelot_0.png" class="BOG-skin0">
+                        <img src="./img/card/BOGhappy_camelot_1.png" class="BOG-skin1">
+                        <img src="./img/card/BOGhappy_camelot_2.png" class="BOG-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="suspicion">
+                    <h4>Suspicion of BOG</h4>
+                    <p>From Attr. Unfaithful</p>
+                    <div class="card_modern">
+                        <img src="./img/card/suspicion_0.png" class="BOG-skin0">
+                        <img src="./img/card/suspicion_1.png" class="BOG-skin1">
+                        <img src="./img/card/suspicion_2.png" class="BOG-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/suspicion_camelot_0.png" class="BOG-skin0">
+                        <img src="./img/card/suspicion_camelot_1.png" class="BOG-skin1">
+                        <img src="./img/card/suspicion_camelot_2.png" class="BOG-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="BOGquarrel">
+                    <h4>Quarrel with BOG</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BOGquarrel_0.png" class="BOG-skin0">
+                        <img src="./img/card/BOGquarrel_1.png" class="BOG-skin1">
+                        <img src="./img/card/BOGquarrel_2.png" class="BOG-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/BOGquarrel_camelot_0.png" class="BOG-skin0">
+                        <img src="./img/card/BOGquarrel_camelot_1.png" class="BOG-skin1">
+                        <img src="./img/card/BOGquarrel_camelot_2.png" class="BOG-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="BODquarrel">
+                    <h4>Quarrel with BOD</h4>
+                    <div class="card_modern">
+                        <img src="./img/card/BODquarrel_0.png" class="BOD-skin0">
+                        <img src="./img/card/BODquarrel_1.png" class="BOD-skin1">
+                        <img src="./img/card/BODquarrel_2.png" class="BOD-skin2">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/BODquarrel_camelot_0.png" class="BOD-skin0">
+                        <img src="./img/card/BODquarrel_camelot_1.png" class="BOD-skin1">
+                        <img src="./img/card/BODquarrel_camelot_2.png" class="BOD-skin2">
+                    </div>
+                </div>
+                <div class="card_drag" id="moral">
+                    <h4>Moral Choice</h4>
+                    <img src="./img/card/moral.png">
+                </div>
+                <div class="card_drag" id="happy_alone">
+                    <h4>Happy Alone</h4>
+                    <p>Moral Quality of BOG/D is negative</p>
+                    <img src="./img/card/happy_alone.png">
+                </div>
+                <div class="card_drag" id="alone">
+                    <h4>Alone</h4>
+                    <img src="./img/card/alone.png">
+                </div>
+                <div class="card_drag" id="fearBOG">
+                    <p>From Violent Attr. of BOG</p>
+                    <h4>Fear</h4>
+                    <img src="./img/card/fearBOG.png">
+                </div>
+                <div class="card_drag" id="threat">
+                    <h4>Threat</h4>
+                    <p>From Violent Attr. of BOG</p>
+                    <img src="./img/card/threat.png">
+                </div>
+                <div class="card_drag" id="revenge">
+                    <h4>Revenge</h4>
+                    <p>From Violent Attr. of BOG</p>
+                    <img src="./img/card/revenge.png">
+                </div>
+                <div class="card_drag" id="fear_poverty">
+                    <h4>Fear of Poverty</h4>
+                    <p>From Attr. Snobbish</p>
+                    <div class="card_modern">
+                        <img src="./img/card/fear_poverty.png">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/fear_poverty_camelot.png">
+                    </div>
+                </div>
+                <div class="card_drag" id="temptation_wealth">
+                    <h4>Tempt. by Wealth</h4>
+                    <p>From Financial Attr. of BOG/D</p>
+                    <div class="card_modern">
+                        <img src="./img/card/temptation_wealth.png">
+                    </div>
+                    <div class="card_camelot">
+                        <img src="./img/card/temptation_wealth_camelot.png">
+                    </div>
+                </div>
+                <div class="card_drag" id="violence">
+                    <h4>Violence</h4>
+                    <p>From Violent Attr. of BOG/D</p>
+                    <img src="./img/card/violence.png">
+                </div>
+                <div class="card_drag" id="battle">
+                    <h4>Battle</h4>
+                    <img src="./img/card/battle.png">
+                </div>
+            </div>
+            <div id="step4" class="step">
+                <h1>Step Four. Create Five Part Structure for Your Story</h1>
+                <p>Click the story cards to fill your five part structure. Click the button Done after you finish.</p>
+                <button id="button_done">Done</button>
+            </div>
+        </div>
+        <div id="final_board">
+            <div class="info_B">
+                <div id="generate_BOG_modern_small">
+                    <div id="BOG_skin1" class="BOG-skin0"></div>
+                    <div id="BOG_skin2" class="BOG-skin1"></div>
+                    <div id="BOG_skin3" class="BOG-skin2"></div>
+                    <div id="BOG_hair1" class="BOG-hair1"></div>
+                    <div id="BOG_hair2" class="BOG-hair0"></div>
+                    <div id="cloth0" class="BOG-cloth0"></div>
+                    <div id="cloth1" class="BOG-cloth1"></div>
+                    <div id="cloth2" class="BOG-cloth2"></div>
+                    <div id="cloth3" class="BOG-cloth3"></div>
+                    <div id="cloth4_1" class="BOG-cloth4"></div>
+                    <div id="cloth5_1" class="BOG-cloth5"></div>
+                    <div id="cloth7" class="BOG-cloth7"></div>
+                    <div id="hand1" class="BOG-skin0"></div>
+                    <div id="hand2" class="BOG-skin1"></div>
+                    <div id="hand3" class="BOG-skin2"></div>
+                    <div id="cloth6_1" class="BOG-cloth6-0"></div>
+                    <div id="cloth6_2" class="BOG-cloth6-1"></div>
+                    <div id="cloth6_3" class="BOG-cloth6-2"></div>
+                </div>
+                <div id="generate_BOG_camelot_small">
+                    <img src="./img/character_camelot/BOG_king_white.png" id="BOG_camelot_image">
+                </div>
+                <div class="summary">
+                    <h2>BOG</h2>
+                    <p>Moral Quality: <span id="value_moral_BOG">-5</span></p>
+                    <p>Attractiveness: <span id="value_attract_BOG">-5</span></p>
+                    <p>Occupation: <span id="value_status_BOG">teacher</span></p>
+                    <p>Attributes:<span id="value_attr_BOG">snobbish</span></p>
+                    <p><span id="value_attr_BOG_2"></span></p>
+                </div>
+            </div>
+            <div class="info_B">
+                <div id="generate_BOD_modern_small">
+                    <div id="BOD_skin1" class="BOD-skin0"></div>
+                    <div id="BOD_skin2" class="BOD-skin1"></div>
+                    <div id="BOD_skin3" class="BOD-skin2"></div>
+                    <div id="BOD_hair1" class="BOD-hair0"></div>
+                    <div id="BOD_hair2" class="BOD-hair1"></div>
+                    <div id="cloth0" class="BOD-cloth0"></div>
+                    <div id="cloth1" class="BOD-cloth1"></div>
+                    <div id="cloth2" class="BOD-cloth2"></div>
+                    <div id="cloth3" class="BOD-cloth3"></div>
+                    <div id="cloth4" class="BOD-cloth4"></div>
+                    <div id="cloth5" class="BOD-cloth5"></div>
+                    <div id="cloth7" class="BOD-cloth7"></div>
+                    <div id="hand1" class="BOD-skin0"></div>
+                    <div id="hand2" class="BOD-skin1"></div>
+                    <div id="hand3" class="BOD-skin2"></div>
+                    <div id="cloth6_1" class="BOD-cloth6-0"></div>
+                    <div id="cloth6_2" class="BOD-cloth6-1"></div>
+                    <div id="cloth6_3" class="BOD-cloth6-2"></div>
+                </div>
+                <div id="generate_BOD_camelot_small">
+                    <img src="./img/character_camelot/BOD_knight_yellow.png" id="BOD_camelot_image">
+                </div>
+                <div class="summary">
+                    <h2>BOD</h2>
+                    <p>Moral Quality: <span id="value_moral_BOD">-5<span></p>
 					<p>Attractiveness: <span id="value_attract_BOD">-5</span></p>
-					<p>Occupation: <span id="value_status_BOD">teacher</span></p>
-					<p>Attributes:<span id="value_attr_BOD">snobbish</span></p>
-					<p><span id="value_attr_BOD_2"></span></p>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div>
-	<script src="./script/jquery.range.js"></script>
-	<script src="./script/selectize.min.js"></script>
-	<script type="text/javascript" src="./script/main.js"></script>
+                    <p>Occupation: <span id="value_status_BOD">teacher</span></p>
+                    <p>Attributes:<span id="value_attr_BOD">snobbish</span></p>
+                    <p><span id="value_attr_BOD_2"></span></p>
+                </div>
+            </div>
+            <div id="five_structure">
+                <div class="final_display" id="opening_final">
+                    <h4>Openning Situation</h4>
+                    <p></p>
+                    <img src="">
+                </div>
+                <div class="final_display" id="disruption_final">
+                    <h4>Disruption</h4>
+                    <p></p>
+                    <img src="">
+                </div>
+                <div class="final_display" id="crisis_final">
+                    <h4>Crisis / Constraint</h4>
+                    <p></p>
+                    <img src="">
+                </div>
+                <div class="final_display" id="choice_final">
+                    <h4>Choices</h4>
+                    <p></p>
+                    <img src="">
+                </div>
+                <div class="final_display" id="consequence_final">
+                    <h4>Consequence</h4>
+                    <p></p>
+                    <img src="">
+                </div>
+            </div>
+            <div id="step5" class="step">
+                <h1>Build This Story in Twine</h1>
+                <p>You can right click to download the images of your five part structure and use them in <a href="http://twinery.org/">Twine</a> to create an interactive story. If you want to redesign your character and plot, hit Start Over button. </p>
+                <button id="start_over">Start Over</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script/jquery.range.js"></script>
+    <script src="./script/selectize.min.js"></script>
+    <script type="text/javascript" src="./script/main.js"></script>
 </body>
+
 </html>

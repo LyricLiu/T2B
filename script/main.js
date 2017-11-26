@@ -742,12 +742,28 @@
             $('#value_status_BOD').text($('#status_camelot_BOD').attr('value'));
         }
 
+        var card_height = $('.final_display').width()*1.5;
+        $('.final_display').css('height',card_height);
+
         $('#value_attr_BOG').text(attribute_BOG.slice(0,3).toString());
         $('#value_attr_BOD').text(attribute_BOD.slice(0,3).toString());
         var length_BOG = attribute_BOG.length;
         $('#value_attr_BOG_2').text(attribute_BOG.slice(3,length_BOG).toString());
         var length_BOD = attribute_BOD.length;
         $('#value_attr_BOD_2').text(attribute_BOD.slice(3,length_BOD).toString());
+
+        var five_content = [opening, disruption, crisis, choice, consequence]
+        var five = ['opening', 'disruption', 'crisis', 'choice', 'consequence']
+
+        for (var i=0;i<5;i++){
+            var name = '#' + five[i] + '_final p';
+            $(name).text($('#' + five_content[i] + ' h4').text());
+            console.log(name);
+        }
+
+    
+
+
 
 
     })
