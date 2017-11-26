@@ -141,6 +141,10 @@ button{
 	display:none;
 }
 
+#homepage{
+	display: none;
+}
+
 #generate_cards{
 	display: none;
 }
@@ -691,6 +695,7 @@ th {
 	border-radius: 10px;
 	float:left;
 	margin:10px;
+	cursor:pointer;
 }
 
 .card_drag h4{
@@ -749,13 +754,16 @@ th {
 	right:20%;
 	height:100%;
 	background-color: #fff;
-	border: 3px solid #d74276;
+	cursor:pointer;
 }
+
 
 .drag_box p{
 	text-align: center;
-	color:#eadfe0;
-	margin-top: 25px;
+	color:#bbb;
+	margin-top: 17px;
+	width:80%;
+	margin-left:10%;
 }
 
 .card_drag p{
@@ -767,6 +775,33 @@ th {
 	font-size: 0.7em;
 	color:#163e6e;
 }
+
+
+#opening p{
+	display:none;
+}
+
+#opening{
+	border: 3px solid #d74276;
+}
+
+/* final screen*/
+#final_board{
+	background-color: #f0e0e2;
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+
+
+.info_B{
+	position: relative;
+	float:left;
+	width:50%;
+	height:300px;
+	background-color: #fff;
+}
+
 
 
 

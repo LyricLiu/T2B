@@ -582,7 +582,110 @@
         }
     )
 
+    /* five part structure */
 
+    var structure = '#opening';
+    var opening;
+    var disruption;
+    var crisis;
+    var choice;
+    var consequence;
+
+    $('#opening').click(function(){
+        structure = '#opening';
+        $('#opening p').hide();
+        $('#disruption p').show();
+        $('#crisis p').show();
+        $('#choice p').show();
+        $('#consequence p').show();
+        $('#opening').css('border','3px solid #d74276');
+        $('#disruption').css('border','');
+        $('#crisis').css('border','');
+        $('#choice').css('border','');
+        $('#consequence').css('border','');
+
+    })
+
+    $('#disruption').click(function(){
+        structure = '#disruption';
+        $('#disruption p').hide();
+        $('#opening p').show();
+        $('#crisis p').show();
+        $('#choice p').show();
+        $('#consequence p').show();
+        $('#disruption').css('border','3px solid #d74276');
+        $('#opening').css('border','3px solid #fbeff0');
+        $('#crisis').css('border','');
+        $('#choice').css('border','');
+        $('#consequence').css('border','');
+
+    })
+
+    $('#crisis').click(function(){
+        structure = '#crisis';
+        $('#crisis p').hide();
+        $('#opening p').show();
+        $('#disruption p').show();
+        $('#choice p').show();
+        $('#consequence p').show();
+        $('#crisis').css('border','3px solid #d74276');
+        $('#opening').css('border','3px solid #fbeff0');
+        $('#disruption').css('border','');
+        $('#choice').css('border','');
+        $('#consequence').css('border','');
+
+    })
+
+    $('#choice').click(function(){
+        structure = '#choice';
+        $('#choice p').hide();
+        $('#opening p').show();
+        $('#disruption p').show();
+        $('#crisis p').show();
+        $('#consequence p').show();
+        $('#choice').css('border','3px solid #d74276');
+        $('#opening').css('border','3px solid #fbeff0');
+        $('#disruption').css('border','');
+        $('#crisis').css('border','');
+        $('#consequence').css('border','');
+
+    })
+
+    $('#consequence').click(function(){
+        structure = '#consequence';
+        $('#consequence p').hide();
+        $('#opening p').show();
+        $('#disruption p').show();
+        $('#crisis p').show();
+        $('#choice p').show();
+        $('#consequence').css('border','3px solid #d74276');
+        $('#opening').css('border','3px solid #fbeff0');
+        $('#disruption').css('border','');
+        $('#crisis').css('border','');
+        $('#choice').css('border','');
+
+    })
+
+
+    $('.card_drag').click(function(){
+        if(structure=='#opening'){
+            opening = $(this).attr('id');
+        }else if(structure=='#disruption'){
+            disruption = $(this).attr('id');
+        }else if(structure=='#crisis'){
+            crisis = $(this).attr('id');
+        }else if(structure=='#choice'){
+            choice = $(this).attr('id');
+        }else if(structure=='#consequence'){
+            consequence = $(this).attr('id');
+        }
+
+        var text = $(this).children('h4').text();
+            $(structure + ' p').text(text);
+            $(structure + ' p').show();
+            $(structure + ' p').css('color','#d74276');
+            $(structure + ' p').css('font-size','1.2em');
+    })
 
 
 })();
