@@ -761,11 +761,53 @@
             console.log(name);
         }
 
-    
+        for (var i=0;i<5;i++){
+            var link = '';
+            var name;
+            if((five_content[i]=='temptation')||(five_content[i]=='love_first')||(five_content[i]=='BODhappy')||(five_content[i]=='BODquarrel')){
+                if(camelot==false){
+                    link = "./img/card/" + five_content[i] + "_" + skin_BOD + ".png";
+                }else{
+                    link = "./img/card/" + five_content[i] + "_camelot_" + skin_BOD + ".png";
+                }
+            }else if((five_content[i]=='break')||(five_content[i]=='BOGhappy')||(five_content[i]=='suspicion')||(five_content[i]=='BOGquarrel')){
+                if(camelot==false){
+                    link = "./img/card/" + five_content[i] + "_" + skin_BOG + ".png";
+                }else{
+                    link = "./img/card/" + five_content[i] + "_camelot_" + skin_BOG + ".png";
+                }
+            }else if(five_content[i]=='BODproposal'){
+                if(camelot==false){
+                    link = "./img/card/" + five_content[i] + "_" + skin_BOD + ".png";
+                }else{
+                    link = "./img/card/proposal_camelot.png"
+                }
+            }else if(five_content[i]=='BOGproposal'){
+                if(camelot==false){
+                    link = "./img/card/" + five_content[i] + "_" + skin_BOG + ".png";
+                }else{
+                    link = "./img/card/proposal_camelot.png"
+                }
+            }else if((five_content[i]=='rescue')||(five_content[i]=='seduction')){
+                link = "./img/card/" + five_content[i] + "_" + skin_BOD + ".png";
+            }else if((five_content[i]=='moral')||(five_content[i]=='happy_alone')||(five_content[i]=='alone')||(five_content[i]=='fearBOG')||(five_content[i]=='threat')||(five_content[i]=='revenge')||(five_content[i]=='violence')||(five_content[i]=='battle')){
+                link = "./img/card/" + five_content[i] + ".png";
+            }else if((five_content[i]=='fear_poverty')||(five_content[i]=='temptation_wealth')){
+                if(camelot==false){
+                    link = "./img/card/" + five_content[i] + ".png";
+                }else{
+                    link = "./img/card/" + five_content[i] + "_camelot" + ".png";
+                }
+            }
+            name = "#" + five[i] + "_final" + " img";
+            $(name).attr('src',link);
+        }
 
+    })
 
-
-
+    //start over
+    $('#start_over').click(function(){
+        location.reload();
     })
 
 })();

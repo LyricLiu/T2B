@@ -71,6 +71,11 @@ button{
 
 }
 
+.step a{
+	color:#fbeff0;
+	font-size: 1.2em;
+}
+
 /* test test test test 
 #homepage{
 	display: none;
