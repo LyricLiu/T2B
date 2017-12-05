@@ -231,6 +231,11 @@ button{
 	border:2px solid #d74276;
 }
 
+.reference{
+	cursor: pointer;
+	color:blue;
+}
+
 /*character design page*/
 
 #camelot_input_BOG,

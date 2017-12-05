@@ -16,12 +16,6 @@
     var attribute_BOD = [];
 
 
-    $(document).ready(function() {
-
-
-        //console.log($('#slider_moral').attr('value'));
-    });
-
     $('#slider_moral_BOG').jRange({
         from: -5.0,
         to: 5.0,
@@ -142,6 +136,10 @@
     });
 
     //button control 
+
+    $('.reference').click(function(){
+        window.open('./reference.html', '_blank');
+    })
 
     $('#create_story').click(function() {
         $('#homepage').hide();
