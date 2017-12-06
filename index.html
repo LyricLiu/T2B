@@ -13,7 +13,7 @@
 <body>
     <header></header>
     <div>
-        <!--Front page-->
+        <!--Home Page-->
         <div id="homepage">
             <img id="title_image" src="./img/title.png">
             <h2>Tale of Two Boyfriends</h2>
@@ -21,7 +21,10 @@
             <a href="">Read Janet H. Murray's article “A Tale of Two Boyfriends”</a>
             <button id="create_story">Create a T2B story</button>
         </div>
-        <!--Step 1 Design character-->
+
+        <!--Step 1-->
+
+        <!--Step 1 Left part: Design BOG-->
         <div id="design_character">
             <div class="design_BOG">
                 <h2>BOG</h2>
@@ -120,6 +123,7 @@
                     </div>
                 </div>
             </div>
+            <!--Step 1 right part: Design BOD-->
             <div class="design_BOD">
                 <h2>BOD</h2>
                 <h3>Boyfriend of Desire</h3>
@@ -216,12 +220,16 @@
                     </div>
                 </div>
             </div>
+            <!--Step 1 message box content-->
             <div id="step1" class="step">
                 <h1>Step One. Character Design</h1>
                 <p>Use the above options to design two main characters. Character appearance will be generated based on your selection. Click Generate Character button after you finish.</p>
                 <button id="generate_character_button">Generate Character</button>
             </div>
         </div>
+
+        <!--Step 2-->
+
         <div id="generate_character">
             <div id="generate_BOG">
                 <h2>BOG</h2>
@@ -275,12 +283,16 @@
                     <img src="./img/character_camelot/BOD_knight_yellow.png" id="BOD_camelot_image">
                 </div>
             </div>
+            <!--Step 1 message box content-->
             <div id="step2" class="step">
                 <h1>Step Two. Confirm Your Character</h1>
                 <p>Congratulations! You have successfully designed the appearance of your characters. Now it's time to add some attributes and personalities to your character. Click Set Attributes button to continue.</p>
                 <button id="confirm_character_button">Set Attributes</button>
             </div>
         </div>
+
+
+        <!--Step 3-->
         <div id="design_personality">
             <div class="design_BOG">
                 <p class="note_text">Based on your setting: Moral quality = <span id="BOG_moral_value">-3</span></p>
@@ -458,12 +470,16 @@
                     </tr>
                 </table>
             </div>
+            <!--Step 3 message box content-->
             <div id="step3" class="step">
                 <h1>Step Three. Choose Character Attributes</h1>
                 <p>Click to choose attributes from multiple columns for BOG and BOD, such as a comformist who is unfaithful but highly jealous. Story cards will be generated based on the attributes assigned to each character. Click Generate Story Cards button after you finish.</p>
                 <button id="generate_cards_button">Generate Story Cards</button>
             </div>
         </div>
+
+
+        <!--Step 4-->
         <div id="generate_cards">
             <p class="note_text">The story cards below are generated from the character attributes you defined at the Step three.</p>
             <div id="drag_morphemes">
@@ -700,12 +716,15 @@
                     <img src="./img/card/battle.png">
                 </div>
             </div>
+            <!--Step 4 message box content-->
             <div id="step4" class="step">
                 <h1>Step Four. Create Five Part Structure for Your Story</h1>
                 <p>Click the story cards to fill your five part structure. Click the button Done after you finish.</p>
                 <button id="button_done">Done</button>
             </div>
         </div>
+
+        <!--Final Screen-->
         <div id="final_board">
             <div class="info_B">
                 <div id="generate_BOG_modern_small">
@@ -800,6 +819,7 @@
                     <img src="">
                 </div>
             </div>
+            <!--Final screen message box content-->
             <div id="step5" class="step">
                 <h1>Build This Story in Twine</h1>
                 <p>Here is your story settings! You can right click to download the images of your five part structure and use them in <a href="http://twinery.org/">Twine</a> to create an interactive story. If you want to redesign your character and plot, hit Start Over button. </p>

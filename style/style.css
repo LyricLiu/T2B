@@ -76,13 +76,8 @@ button{
 	font-size: 1.2em;
 }
 
-/* test test test test 
-#homepage{
-	display: none;
-}
-*/
 
-/*step footer style*/
+/* Information Box (the pink information bar at the botton of the page) Style*/
 
 .step{
 	position: fixed;
@@ -132,7 +127,7 @@ button{
 	top:30px;
 }
 
-/*display*/
+/* Set the page display*/
 
 #design_character{
 	display:none;
@@ -154,6 +149,8 @@ button{
 	display: none;
 }
 
+/* Set the Character clothing display*/
+
 .BOG-skin0, .BOG-skin1, .BOG-skin2,
 .BOG-cloth0, .BOG-cloth1, .BOG-cloth2, .BOG-cloth3, .BOG-cloth4, .BOG-cloth5,
 .BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2, .BOG-cloth7,
@@ -171,7 +168,7 @@ button{
 }
 
 
-/*position content in the middle of screen*/
+/* make content in the middle of screen*/
 .frame{
 	position: relative;
 	width:1200px;
@@ -180,7 +177,7 @@ button{
 	background-color: #FFF;
 }
 
-/* homepage */
+/* Home Page style */
 
 #title_image{
 	position: relative;
@@ -236,7 +233,7 @@ button{
 	color:blue;
 }
 
-/*character design page*/
+/*Step 1 Character Design Page*/
 
 #camelot_input_BOG,
 #camelot_input_BOD{
@@ -433,7 +430,7 @@ label{
 }
 
 
-/* Generate_character */
+/* Step 2 Generate Character */
 #generate_BOG_camelot{
 	position: absolute;
 	display: none;
@@ -609,7 +606,7 @@ label{
 	background-image: url("../img/character/BOD_skin3.png");
 }
 
-/* design _ personality */
+/* Step 3 Design Personality */
 
 #design_personality h2{
 	text-align: center;
@@ -675,6 +672,8 @@ th {
 	font-size: 1em;
 }
 
+/* Step 4 Generate Card */
+
 #generate_cards{
 	position: absolute;
 	background-color: #fbeff0;
@@ -723,7 +722,7 @@ th {
 	bottom: 0;
 }
 
-/* hide card */
+/* Set the story cards display */
 
 #happy_alone, #temptation, #seduction, #love_first, #rescue, #suspicion,
 #threat, #revenge, #fear_poverty, #temptation_wealth, #fearBOG,
@@ -731,7 +730,7 @@ th {
 	display: none;
 }
 
-/** Morphemes **/
+/* Morphemes part style*/
 #drag_morphemes{
 	position: fixed;
 	right:0;
@@ -795,7 +794,7 @@ th {
 	border: 3px solid #d74276;
 }
 
-/* final screen*/
+/* Final Screen*/
 #final_board{
 	background-color: #f0e0e2;
 	width:100%;
