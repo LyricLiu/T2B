@@ -1,21 +1,37 @@
 (function() {
-    //0 white; 1 yellow; 2 black
+    /* 
+     * skin_BOG is the skill color of BOG character
+     * 0 is white; 1 is yellow; 2 is black
+     */
     var skin_BOG = 0;
     var skin_BOD = 0;
+    /* 
+     * handsomeness_BOG is Character Attractiveness
+     * set by slider, range -5~5
+     */
     var handsome_BOG = 0;
     var handsome_BOD = 0;
-    //0 white T-shirt; 1 white shirt; 2 white shirt with jacket; 
-    //3 professional; 4 actor; 5 musician; 6 exercise; 7 superman.
+    /* 
+     * cloth_BOG is Character clothing
+     * 0 white t-shirt; 1 white shirt; 2 white shirt with jacket; 
+     * 3 professional suit; 4 Actor's suit; 5 Musician's suit or Gangster's suit; 6 sport suit
+     */
     var cloth_BOG = 0;
     var cloth_BOD = 0;
-    //0 handsome haircut 
+    /* 0 and 1 are two kinds of haircut */
     var hair_BOG = 0;
     var hair_BOD = 0;
+    /* era variant */
     var camelot = false;
+    /* An array to store the attributes input*/
     var attribute_BOG = [];
     var attribute_BOD = [];
 
 
+    /*
+     * Build a slider for the user to set the moral quality and attractiveness
+     * Third-party: https://github.com/nitinhayaran/jRange
+     */
     $('#slider_moral_BOG').jRange({
         from: -5.0,
         to: 5.0,
@@ -90,7 +106,12 @@
         sortField: 'text'
     });
 
-    //choose era, change the status dropdown box
+
+    /*
+     * Control the era setting
+     * Control BOG and BOD's era to be consistent
+     * Change the occupation/status dropbox according to era
+     */
     $('#modern_BOG').click(function() {
         $('#camelot_BOG').prop('checked', false);
         $('#camelot_BOD').prop('checked', false);
@@ -135,8 +156,12 @@
         $('#camelot_input_BOD').show();
     });
 
-    //button control 
 
+    /*
+     * click event of all the buttons that in the pink information box
+     */
+
+    /*click the note to open a new reference page*/
     $('.reference').click(function(){
         window.open('./reference.html', '_blank');
     })
@@ -146,15 +171,20 @@
         $('#design_character').show();
     });
 
+    /*show step 2 Generate character*/
+
     $('#generate_character_button').click(function() {
         $('#design_character').hide();
         $('#generate_character').show();
     });
 
+    /*show step 3 Set Attribute*/
+
     $('#confirm_character_button').click(function() {
         $('#generate_character').hide();
         $('#design_personality').show();
 
+        /* judge the attribute table for each character based on the moral quality defined by the user */
         if ($('#slider_moral_BOG').attr('value') < 0 || $('#slider_moral_BOG').attr('value') == 0) {
             $('#negative_BOG').show();
         } else {
@@ -171,6 +201,7 @@
         $('#BOD_moral_value').text($('#slider_moral_BOD').attr('value'));
     });
 
+    /* show step 4 Generate cards*/
     $('#generate_cards_button').click(function() {
         $('#design_personality').hide();
         $('#generate_cards').show();
@@ -186,6 +217,7 @@
             $('#battle').hide();
         }
 
+        /* Control Character's skin color in each story card*/
         if (skin_BOG == 0) {
             $('.BOG-skin0').show();
         } else if (skin_BOG == 1) {
@@ -202,6 +234,7 @@
             $('.BOD-skin2').show();
         }
 
+        /* Control the display of cards according to the Moral quality, Attravtiveness, Attributes of Character*/
         if ($('#slider_handsome_BOD').attr('value') > 0){
             $('#love_first').show();
             if($('#slider_moral_BOD').attr('value') < 2){
@@ -220,7 +253,10 @@
 
     })
 
-    //select skin
+    /*
+     * Step 1 Character Design
+     * User Input: Select skin color
+     */
     $('#white_BOG').click(function() {
         $('#white_BOG').css('border-bottom', '2px solid #d74276');
         $('#yellow_BOG').css('border-bottom', '');
@@ -262,9 +298,15 @@
     })
 
 
-    //Generate character
+    /*
+     * Step 2 Generate Character
+     * generate character cloth, hair and skin color
+     */
 
+    /* Judge cloth according to the occupation/status and era */
     $('#generate_character_button').click(function() {
+       
+        /* Modern Character*/
         if (camelot == false) {
             if (($('#status_BOG').attr('value') == 'teacher') || ($('#status_BOG').attr('value') == 'clerk') || ($('#status_BOG').attr('value') == 'sale')) {
                 cloth_BOG = 1;
@@ -309,8 +351,6 @@
             if ($('#slider_handsome_BOD').attr('value') < 0) {
                 hair_BOD = 1;
             }
-
-            //display & hide generated character image
 
             if (hair_BOG == 1) {
                 $('.BOG-hair1').show();
@@ -392,6 +432,7 @@
                 $('.BOD-skin2').show();
             }
 
+        /* Camelot Character*/
         } else {
             $('#generate_BOG_camelot').show();
             $('#generate_BOD_camelot').show();
@@ -485,7 +526,10 @@
 
     })
 
-    //table click
+    /*
+     * Step 3 Set Character Attributes 
+     * Change the table style when click
+     */
     $('.design_BOG td').toggle(
         function() {
             $(this).css('border', '2px solid #d74276');
@@ -503,6 +547,11 @@
             $(this).css('border', '2px solid #fff');
         }
     )
+
+    /*
+     * Step 3 Set Character Attributes 
+     * Click attributes to control the display of the story cards 
+     */
 
     $('.show_violence').toggle(
         function() {
@@ -586,15 +635,22 @@
         }
     )
 
-    /* five part structure */
+    /* 
+     * Step 4 Genrate Story Card
+     * Drag story cards to five morphemes
+     */
 
+    /* structure: a variant to mark which morpheme is selected now*/
     var structure = '#opening';
+
+    /* variant to store the card name for each morpheme */
     var opening;
     var disruption;
     var crisis;
     var choice;
     var consequence;
 
+    /* Control the style when user click each morpheme */
     $('#opening').click(function(){
         structure = '#opening';
         $('#opening p').hide();
@@ -670,7 +726,7 @@
 
     })
 
-
+    /* Click cards to store the card name to each morpheme */
     $('.card_drag').click(function(){
         if(structure=='#opening'){
             opening = $(this).attr('id');
@@ -691,7 +747,13 @@
             $(structure + ' p').css('font-size','1.2em');
     })
 
-    //remove by value function 
+
+    /*
+     * Final Review Page
+     * Display all the character settings in this page
+     */
+
+    /* remove by value function */
     function removeByValue(arr, val) {
         for(var i=0; i<arr.length; i++) {
             if(arr[i] == val) {
@@ -701,8 +763,7 @@
         }
     }
 
-    //append attribute
-
+    /* Push selected Attributes to an array */
     $('.design_BOG td').toggle(
         function() {
             attribute_BOG.push($(this).text());
@@ -721,8 +782,7 @@
         }
     )
 
-    //final page control
-
+    /* Display final review page */
     $('#button_done').click(function(){
         $('#final_board').show();
         $('#generate_cards').hide();
@@ -740,9 +800,15 @@
             $('#value_status_BOD').text($('#status_camelot_BOD').attr('value'));
         }
 
+        /*
+         * Change the height of the cards according to the user screen size
+         */
         var card_height = $('.final_display').width()*1.5;
         $('.final_display').css('height',card_height);
 
+        /*
+         * Display character attributs
+         */
         $('#value_attr_BOG').text(attribute_BOG.slice(0,3).toString());
         $('#value_attr_BOD').text(attribute_BOD.slice(0,3).toString());
         var length_BOG = attribute_BOG.length;
@@ -750,6 +816,9 @@
         var length_BOD = attribute_BOD.length;
         $('#value_attr_BOD_2').text(attribute_BOD.slice(3,length_BOD).toString());
 
+        /*
+         * Judge the content for five morphemes
+         */
         var five_content = [opening, disruption, crisis, choice, consequence]
         var five = ['opening', 'disruption', 'crisis', 'choice', 'consequence']
 
@@ -803,7 +872,7 @@
 
     })
 
-    //start over
+    /* Start Over button */
     $('#start_over').click(function(){
         location.reload();
     })
