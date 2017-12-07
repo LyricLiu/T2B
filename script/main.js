@@ -6,12 +6,6 @@
     var skin_BOG = 0;
     var skin_BOD = 0;
     /* 
-     * handsomeness_BOG is Character Attractiveness
-     * set by slider, range -5~5
-     */
-    var handsome_BOG = 0;
-    var handsome_BOD = 0;
-    /* 
      * cloth_BOG is Character clothing
      * 0 white t-shirt; 1 white shirt; 2 white shirt with jacket; 
      * 3 professional suit; 4 Actor's suit; 5 Musician's suit or Gangster's suit; 6 sport suit
@@ -184,7 +178,7 @@
         $('#generate_character').hide();
         $('#design_personality').show();
 
-        /* judge the attribute table for each character based on the moral quality defined by the user */
+        /* set attribute table */
         if ($('#slider_moral_BOG').attr('value') < 0 || $('#slider_moral_BOG').attr('value') == 0) {
             $('#negative_BOG').show();
         } else {
@@ -234,7 +228,7 @@
             $('.BOD-skin2').show();
         }
 
-        /* Control the display of cards according to the Moral quality, Attravtiveness, Attributes of Character*/
+        /* Control the display of cards according to the Moral quality, Attractiveness, Attributes of Character*/
         if ($('#slider_handsome_BOD').attr('value') > 0){
             $('#love_first').show();
             if($('#slider_moral_BOD').attr('value') < 2){
@@ -308,6 +302,8 @@
        
         /* Modern Character*/
         if (camelot == false) {
+
+            /* change suit */
             if (($('#status_BOG').attr('value') == 'teacher') || ($('#status_BOG').attr('value') == 'clerk') || ($('#status_BOG').attr('value') == 'sale')) {
                 cloth_BOG = 1;
             } else if (($('#status_BOG').attr('value') == 'entrepreneur') || ($('#status_BOG').attr('value') == 'billionaire')) {
@@ -343,6 +339,8 @@
             } else {
                 cloth_BOD = 0;
             }
+
+            /* change haircut */
 
             if ($('#slider_handsome_BOG').attr('value') < 0 || $('#slider_handsome_BOG').attr('value') == 0) {
                 hair_BOG = 1;
@@ -416,6 +414,7 @@
                 $('.BOD-cloth7').show();
             }
 
+            /* change skin */
             if (skin_BOG == 0) {
                 $('.BOG-skin0').show();
             } else if (skin_BOG == 1) {
@@ -828,6 +827,9 @@
             console.log(name);
         }
 
+        /*
+         * judge image links for the selected story card.
+         */
         for (var i=0;i<5;i++){
             var link = '';
             var name;
