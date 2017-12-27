@@ -23,6 +23,14 @@ p {
     font-size: 1em;
 }
 
+a{
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 0.9em;
+    color:#4c5b9e;
+}
+
 h2{
 	font-family: Roboto Condensed, sans-serif;
     font-style: normal;
@@ -59,17 +67,23 @@ button{
     font-size: 1.3em;
 	padding:7px 15px 7px 15px;
 	border-radius: 40px;
+	outline:none;
 
 }
 
+.step a{
+	color:#fbeff0;
+	font-size: 1.2em;
+}
 
-/*step footer style*/
+
+/* Information Box (the pink information bar at the botton of the page) Style*/
 
 .step{
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width:100%;
-	height:120px;
+	height:130px;
 	background-color: #d74276;
 }
 
@@ -83,12 +97,14 @@ button{
 }
 
 .step p{
+	position: relative;
 	font-family: Lato, sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 1em;
     color:#fbeff0;
     margin-left: 40px;
+    width:75%;
 }
 
 .step button{
@@ -98,6 +114,7 @@ button{
 	position: absolute;
 	right:50px;
 	top:30px;
+	outline:none;
 }
 
 .step button:hover{
@@ -110,9 +127,48 @@ button{
 	top:30px;
 }
 
+/* Set the page display*/
+
+#design_character{
+	display:none;
+}
+
+#generate_character{
+	display:none;
+}
+
+#design_personality{
+	display:none;
+}
+
+#final_board{
+	display: none;
+}
+
+#generate_cards{
+	display: none;
+}
+
+/* Set the Character clothing display*/
+
+.BOG-skin0, .BOG-skin1, .BOG-skin2,
+.BOG-cloth0, .BOG-cloth1, .BOG-cloth2, .BOG-cloth3, .BOG-cloth4, .BOG-cloth5,
+.BOG-cloth6-0, .BOG-cloth6-1, .BOG-cloth6-2, .BOG-cloth7,
+.BOG-hair0, .BOG-hair1,
+.BOG-skin0, .BOG-skin1, .BOG-skin2{
+	display: none;
+}
+
+.BOD-skin0, .BOD-skin1, .BOD-skin2,
+.BOD-cloth0, .BOD-cloth1, .BOD-cloth2, .BOD-cloth3, .BOD-cloth4, .BOD-cloth5,
+.BOD-cloth6-0, .BOD-cloth6-1, .BOD-cloth6-2, .BOD-cloth7,
+.BOD-hair0, .BOD-hair1,
+.BOD-skin0, .BOD-skin1, .BOD-skin2{
+	display: none;
+}
 
 
-/*position content in the middle of screen*/
+/* make content in the middle of screen*/
 .frame{
 	position: relative;
 	width:1200px;
@@ -121,22 +177,90 @@ button{
 	background-color: #FFF;
 }
 
+/* Home Page style */
+
+#title_image{
+	position: relative;
+	width:74%;
+	left:13%;
+	margin-top: 60px;
+}
+
+#homepage h2{
+	position: relative;
+	text-align: center;
+	color:#686c6d;
+	top: -30px;
+}
+
+#homepage p{
+	font-size: 0.9em;
+	position: relative;
+	top:-20px;
+	width:70%;
+	left:15%;
+	text-align: center;
+	line-height: 1.4em;
+}
+
+#homepage a{
+	position: relative;
+	width:364px;
+	left:calc(50% - 182px);
+	text-align: center;
+}
+
+#homepage button{
+	color:#d74276;
+	border:2px solid #d74276;
+	background-color: white;
+	position: absolute;
+	bottom:80px;
+	width:250px;
+	left:calc(50% - 125px);
+	outline:none;
+}
+
+#homepage button:hover{
+	cursor:pointer;
+	color:#fff;
+	background-color: #d74276;
+	border:2px solid #d74276;
+}
+
+.reference{
+	cursor: pointer;
+	color:blue;
+}
+
+/*Step 1 Character Design Page*/
+
+#camelot_input_BOG,
+#camelot_input_BOD{
+	display: none;
+}
+
+
 #design_character h2{
 	text-align: center;
+	position: relative;
+	top:1.5%;
 }
 
 #design_character h3{
 	text-align: center;
+	position: relative;
+	top:2%;
 }
 
-#design_BOG{
+.design_BOG{
 	position: absolute;
 	left:0;
 	width:50%;
 	height:100%;
 }
 
-#design_BOD{
+.design_BOD{
 	position: absolute;
 	width:50%;
 	right:0;
@@ -156,13 +280,61 @@ button{
 	position: absolute;
 	width:560px;
 	left:calc(50% - 280px);
-	margin-top: 40px;
+	top:16%;
 	height:400px;
+}
+
+.line{
+	height:20px;
+	position: relative;
+	width:100%;
+}
+
+.line div{
+	width:92%;
+	left:4%;
+	height:2px;
+	position: absolute;
+	top:0;
+	background-color:#d74276;
+	bottom: 0;
+}
+
+.check_box{
+	position: relative;
+	float:right;
+	font-family: Lato, sans-serif;
+	margin:5px 38px 0 50px;
+}
+
+.check_box_1{
+	position: relative;
+	float:right;
+	font-family: Lato, sans-serif;
+	margin:5px 30px 0 45px;
+}
+
+label{
+	margin-left: 8px;
+}
+
+#grey_text{
+	color:#999;
+}
+
+
+#era_block{
+	height:40px;
+}
+
+#color_block{
+	height:50px;
 }
 
 .design_block{
 	position: relative;
-	height:80px;
+	height:65px;
+	margin:10px 0 10px 0;
 }
 
 .slider{
@@ -258,10 +430,480 @@ button{
 }
 
 
-
-#step1 p{
-	position: relative;
-	width:70%;
-
+/* Step 2 Generate Character */
+#generate_BOG_camelot{
+	position: absolute;
+	display: none;
 }
+
+#generate_BOD_camelot{
+	position: absolute;
+	display: none;
+}
+
+#BOG_camelot_image,
+#BOD_camelot_image{
+	margin-top: 35px;
+	width:400px;
+}
+
+#generate_character{
+	position: absolute;
+	width:100%;
+	height:100%;
+	background: #f0e0e2;
+}
+
+#generate_BOG{
+	position: absolute;
+	width:400px;
+	height:calc(100% - 60px);
+	/*background: url("../img/BOG_bg.png") no-repeat center center;*/
+	left:14%;
+}
+
+#generate_BOD{
+	position: absolute;
+	width:400px;
+	height:calc(100% - 60px);
+	/*background: url("../img/BOD_bg.png") no-repeat center center;*/
+	right:14%;
+}
+
+#generate_character h2{
+	text-align: center;
+}
+
+#generate_BOG_img{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:calc(50% - 230px);
+	overflow: hidden;
+}
+
+#generate_BOG_img div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#generate_BOD_img{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:calc(50% - 230px);
+	overflow: hidden;
+}
+
+#generate_BOD_img div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#BOG_hair1{
+	background-image: url("../img/character/BOG_hair1.png");
+}
+
+#BOG_hair2{
+	background-image: url("../img/character/BOG_hair2.png");
+}
+
+#BOD_hair1{
+	background-image: url("../img/character/BOD_hair1.png");
+}
+
+#BOD_hair2{
+	background-image: url("../img/character/BOD_hair2.png");
+}
+
+#hand1{
+	background-image: url("../img/character/hand1.png");
+}
+
+#hand2{
+	background-image: url("../img/character/hand2.png");
+}
+
+#hand3{
+	background-image: url("../img/character/hand3.png");
+}
+
+#cloth0{
+	background-image: url("../img/character/cloth0.png");
+}
+
+#cloth1{
+	background-image: url("../img/character/cloth1.png");
+}
+
+#cloth2{
+	background-image: url("../img/character/cloth2.png");
+}
+
+#cloth3{
+	background-image: url("../img/character/cloth3.png");
+}
+
+#cloth4_1{
+	background-image: url("../img/character/cloth4_1.png");
+}
+
+#cloth4{
+	background-image: url("../img/character/cloth4.png");
+}
+
+#cloth5_1{
+	background-image: url("../img/character/cloth5_1.png");
+}
+
+#cloth7{
+	background-image: url("../img/character/cloth7.png");
+}
+
+
+#cloth5{
+	background-image: url("../img/character/cloth5.png");
+}
+
+#cloth6_1{
+	background-image: url("../img/character/cloth6_1.png");
+}
+
+#cloth6_2{
+	background-image: url("../img/character/cloth6_2.png");
+}
+
+#cloth6_3{
+	background-image: url("../img/character/cloth6_3.png");
+}
+
+
+#BOG_skin1{
+	background-image: url("../img/character/BOG_skin1.png");
+}
+
+#BOG_skin2{
+	background-image: url("../img/character/BOG_skin2.png");
+}
+
+#BOG_skin3{
+	background-image: url("../img/character/BOG_skin3.png");
+}
+
+#BOD_skin1{
+	background-image: url("../img/character/BOD_skin1.png");
+}
+
+#BOD_skin2{
+	background-image: url("../img/character/BOD_skin2.png");
+}
+
+#BOD_skin3{
+	background-image: url("../img/character/BOD_skin3.png");
+}
+
+/* Step 3 Design Personality */
+
+#design_personality h2{
+	text-align: center;
+	position: relative;
+	top:3%;
+}
+
+
+#positive_BOG,
+#negative_BOD,
+#positive_BOD,
+#negative_BOG{
+	display: none;
+}
+
+
+.design_BOG td{
+	border: 2px solid #fbeff0;
+}
+
+.design_BOD td{
+	border: 2px solid #fff;
+}
+
+table {
+	top:2.2%;
+	width:84%;
+	position: relative;
+	left:8%;
+	text-align: left;
+	font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 1em;
+    border-spacing: 5px;
+}
+
+td {
+	width:20%;
+	padding:8px 0 8px 0;
+	border-radius: 25px;
+	text-align: center;
+}
+
+td:hover {
+	border: 2px solid #d74276;
+	cursor:pointer;
+}
+
+th {
+	padding:30px 0 10px 15px;
+	color:#20304c;
+}
+
+.note_text{
+	position: absolute;
+	font-size: 0.8em;
+	margin-top: 8px;
+	margin-left:75px;
+}
+
+.note_text span{
+	font-size: 1em;
+}
+
+/* Step 4 Generate Card */
+
+#generate_cards{
+	position: absolute;
+	background-color: #fbeff0;
+	width:100%;
+	height:1300px;
+}
+
+#display_card{
+	position: absolute;
+	width:60%;
+	left:5%;
+	top:40px;
+}
+
+.card_modern,
+.card_camelot{
+	overflow:hidden;
+	display: none;
+	width:100%;
+	height:100%;
+}
+
+.card_drag{
+	position: relative;
+	width:140px;
+	height:220px;
+	background-color: #fff;
+	border-radius: 10px;
+	float:left;
+	margin:10px;
+	cursor:pointer;
+}
+
+.card_drag h4{
+	position: absolute;
+	top:10px;
+	width:100%;
+	text-align: center;
+	font-family: Gill Sans MT, sans-serif;
+	color:#162346;
+}
+
+.card_drag img{
+	position: absolute;
+	width:140px;
+	bottom: 0;
+}
+
+/* Set the story cards display */
+
+#happy_alone, #temptation, #seduction, #love_first, #rescue, #suspicion,
+#threat, #revenge, #fear_poverty, #temptation_wealth, #fearBOG,
+#violence, #battle{
+	display: none;
+}
+
+/* Morphemes part style*/
+#drag_morphemes{
+	position: fixed;
+	right:0;
+	width:34%;
+	height:100%;
+}
+
+#drag_morphemes h2{
+	margin:5px 0 0 30px;
+}
+
+.drag_box{
+	position: relative;
+	height:70px;
+	width:100%;
+	margin:30px;
+}
+
+#drag_morphemes h4{
+	font-family: Gill Sans MT, sans-serif;
+	position: absolute;
+	font-size: 1.2em;
+	width:100px;
+	padding-top: 13px;
+}
+
+.drag_box div{
+	position: absolute;
+	width:50%;
+	right:20%;
+	height:100%;
+	background-color: #fff;
+	cursor:pointer;
+}
+
+
+.drag_box p{
+	text-align: center;
+	color:#bbb;
+	margin-top: 17px;
+	width:80%;
+	margin-left:10%;
+}
+
+.card_drag p{
+	position: absolute;
+	width:100%;
+	font-family: Lato, sans-serif;
+	top:30px;
+	text-align: center;
+	font-size: 0.7em;
+	color:#163e6e;
+}
+
+
+#opening p{
+	display:none;
+}
+
+#opening{
+	border: 3px solid #d74276;
+}
+
+/* Final Screen*/
+#final_board{
+	background-color: #f0e0e2;
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+
+
+.info_B{
+	position: relative;
+	float:left;
+	width:50%;
+	height:220px;
+	border-bottom: 3px solid #fff;
+	overflow: hidden;
+}
+
+.info_B div{
+	position: absolute;
+}
+
+.summary{
+	width:250px;
+	position:absolute;
+	left:410px;
+	margin-bottom: 10px;
+}
+
+.summary p{
+	margin-top: 10px;
+}
+
+#generate_BOG_modern_small,
+#generate_BOD_modern_small{
+	position: absolute;
+	width:400px;
+	height:455px;
+	left:0;
+	top:0;
+	overflow: hidden;
+}
+
+#generate_BOG_modern_small div,
+#generate_BOD_modern_small div{
+	position: absolute;
+	width:400px;
+	height:455px;
+}
+
+#generate_BOD_camelot_small,
+#generate_BOG_camelot_small{
+	top:-35px;
+	display: none;
+}
+
+#final_board span{
+	font-size: 1em;
+	color:#d74276;
+}
+
+
+#five_structure{
+	position: absolute;
+	width:92%;
+	left:4%;
+	height:calc(100% - 220px);
+	bottom: 0;
+}
+
+.final_display{
+	position: relative;
+	width:16%;
+	height:320px;
+	background-color: #fff;
+	border-radius: 10px;
+	float:left;
+	margin:2%;
+}
+
+.final_display h4{
+	position: absolute;
+	top:10px;
+	font-size: 1.2em;
+	width:100%;
+	text-align: center;
+	font-family: Gill Sans MT, sans-serif;
+	color:#162346;
+}
+
+.final_display p{
+	position: absolute;
+	top:37px;
+	width:100%;
+	text-align: center;
+	font-size: 0.8em;
+	color:#d74276;
+}
+
+.final_display img{
+	position: absolute;
+	width:100%;
+	bottom: 0;
+}
+
+
+
+
+
+
+
+
 
